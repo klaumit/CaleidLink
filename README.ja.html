@@ -1,0 +1,1362 @@
+<HTML>
+<HEAD>
+<TITLE>caleidlink Document</TITLE>
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache">
+</HEAD>
+<BODY BGCOLOR=#ffffe0 TEXT=#c00090 LINK=#0090c0 VLINK=#e000a8 ALINK=#00c090>
+caleidlink document <BR>
+All rights reserved. Copyright (C) 1998,2003 by NARITA Tomio. <BR>
+$Id: README.ja.html,v 1.81 2003/11/17 05:11:08 nrt Exp $ <BR>
+このドキュメントは caleidlink のアーカイブに含まれています.
+
+<HR>
+
+<H1>□ 目次</H1>
+
+<OL>
+<LI><A HREF="#abstract">はじめに</A>
+<LI><A HREF="#copyright">コピーライト</A>
+<LI><A HREF="#changes">旧版の廃棄要請</A>
+<LI><A HREF="#bugs">特別採用情報</A>
+<LI><A HREF="#support">対応機種</A>
+<LI> <A HREF="#usage"> 使用方法 </A>
+  <OL>
+  <LI><A HREF="#install">インストールの方法</A>
+  <LI><A HREF="#launch">caleidlink の起動方法</A>
+  <LI><A HREF="#serial">シリアルのパーミション</A>
+  <LI><A HREF="#lock">ロック・ファイル</A>
+  <LI><A HREF="#synchronize">シンクロナイズの方法</A>
+  <LI><A HREF="#backup">バックアップの方法</A>
+  <LI><A HREF="#restore">リストアの方法</A>
+  <LI><A HREF="#data">データ・ファイルの送受信</A>
+  <LI><A HREF="#browse">データ表示の方法</A>
+  <LI><A HREF="#xmclink">Motif版ラッパー (xmclink) </A>
+  <LI><A HREF="#htclink">Web版ラッパー (htclink) </A>
+  </OL>
+<LI> <A HREF="#hotsync">シンクロナイズについて</A>
+  <OL>
+  <LI><A HREF="#prepare">シンクロナイズ前の準備</A>
+  <LI><A HREF="#conf">シンクロナイズ用設定ファイル</A>
+  <LI><A HREF="#create">データ作成のシンクロナイズ</A>
+  <LI><A HREF="#modify">データ更新のシンクロナイズ</A>
+  <LI><A HREF="#remove">データ削除のシンクロナイズ</A>
+  <LI><A HREF="#originals">既存ファイルの保存</A>
+  <LI><A HREF="#categories">カテゴリ・ファイルの編集</A>
+  </OL>
+<LI><A HREF="#format">データフォーマットについて</A>
+  <OL>
+  <LI><A HREF="#text">テキストについて</A>
+  <LI><A HREF="#memo">メモ帳について</A>
+  <LI><A HREF="#encoding">文字列のコード系について</A>
+  <LI><A HREF="#date">日付について </A>
+  <LI><A HREF="#length">長さに関する注意点 </A>
+  <LI><A HREF="#quickform">クイックフォームについて</A>
+  <LI><A HREF="#sheet">イージーシートのフォーマット </A>
+  <LI><A HREF="#addin">アドインのフォーマット </A>
+  </OL>
+<LI> <A HREF="#tips">Tips</A>
+  <OL>
+  <LI><A HREF="#newssource">Web上のニュースソースの取り込みツールについて</A>
+  <LI><A HREF="#adiup">アドイン送信ツールについて</A>
+  <LI><A HREF="#secret">シークレットモードについて</A>
+  <LI><A HREF="#transition">XM-700 から XM-500 へのデータ移行について</A>
+  <LI><A HREF="#failure">シンクロナイズに失敗した時</A>
+  <LI><A HREF="#damage">タッチパネルがいかれた時</A>
+  </OL>
+<LI><A HREF="#trouble">トラブルシューティング</A>
+<LI><A HREF="#todo">ToDo</A>
+<LI><A HREF="#bugreport">バグレポート</A>
+<LI><A HREF="#seealso">これも見てね</A>
+  <OL>
+  <LI> <A HREF="README.en"> pvlink document (English) </A>
+  <LI> <A HREF="CHANGES.ja"> 変更履歴 (CHANGES.ja) </A>
+  <LI> <A HREF="HTCLINK.ja"> htclinkドキュメント (HTCLINK.ja) </A>
+  </OL>
+<LI><A HREF="#thanks">謝辞</A>
+<LI><A HREF="#files">ファイル構成</A>
+<LI><A HREF="#glossary">caleidlink 用語集</A>
+</OL>
+
+<HR>
+<A NAME="abstract">
+<H1>□ はじめに</H1>
+
+<UL>
+<LI> caleidlink とは? <BR>
+  caleidlink は UNIX 環境で CALEID と通信するためのソフトです.
+<P>
+<LI> なにができるの? <BR>
+  caleidlink は次の 5つの機能を持っています.
+  <OL>
+  <LI> シンクロナイズ <BR>
+    <OL>
+    <LI> データ作成のシンクロナイズ <BR>
+        CALEID 側で新しく作成したデータを UNIX のファイルとして取り出す. <BR>
+        UNIX 側で新しく作成したファイルを CALEID のデータとして送信する.
+    <LI> データ更新のシンクロナイズ <BR>
+        CALEID 側で更新したデータを UNIX のファイルとして取り出す. <BR>
+        UNIX 側で更新したファイルを CALEID のデータとして送信する.
+    <LI> データ削除のシンクロナイズ <BR>
+        CALEID 側で削除したデータを UNIX 側でも削除する. <BR>
+        UNIX 側で削除したファイルを CALEID 側でも削除する.
+    </OL>
+   <LI> バックアップ <BR>
+      CALEID の全データを UNIX のファイルとして取り出す.
+   <LI> リストア <BR>
+      バックアップしたデータを CALEID に送り返して元の状態に戻す.
+   <LI> データの送受信 <BR>
+     『イージーシート』と『アドイン』のデータを送受信する.
+   <LI> データ表示 <BR>
+      フォルダ内のデータを表示する機能. CGI で利用します.
+   </OL>
+<P>
+<LI> caleidlink の目的は? <BR>
+  caleidlinkの目的はCALEIDと通信することによりPDAとUNIX環境で情報を共有することです.
+  <P>
+  caleidlinkは単純にCALEIDとの通信機能を提供します.
+  caleidlinkには GUI による操作や,
+  高度な PIM 機能はありません.
+  <P>
+  GUIに関しては,
+  caleidlinkを外部プログラムとして呼び出すラッパーを用いることで
+  GUI環境からの実行が可能です.
+  『サンプル』として
+  Motifツールキットを利用したX11クライアントと,
+  Webブラウザから利用できるPerl CGIを用意しています.
+  <P>
+  将来的には,
+  GNU Emacs などから利用できる汎用の PIM ツールと
+  CALEID との通信をサポートしたいと考えています.
+</UL>
+
+<HR>
+<A NAME="copyright">
+<H1>□ コピーライト</H1>
+
+<BLOCKQUOTE>
+  <FONT COLOR="#ff0000">※ 重要:</FONT> <BR>
+  caleidlink はあなたの CALEID の状態を元に戻せない方法で変更します.
+  私は必ずしも元の状態に戻せることを保証できませんが,
+  あなたが caleidlink を使う前に正式な方法でバックアップを取っておくことを
+  お勧め致します.
+</BLOCKQUOTE>
+
+<PRE>
+   All rights reserved. Copyright (C) 1998,1999 by NARITA Tomio.
+
+   Redistribution and use in source and binary forms, with or without
+   modification, are permitted provided that the following conditions
+   are met:
+   1. Redistributions of source code must retain the above copyright
+      notice unmodified, this list of conditions, and the following
+      disclaimer.
+   2. Redistributions in binary form must reproduce the above copyright
+      notice, this list of conditions and the following disclaimer in the
+      documentation and/or other materials provided with the distribution.
+
+   THIS SOFTWARE IS PROVIDED BY THE AUTHOR AND CONTRIBUTORS ``AS IS'' AND
+   ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE
+   IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE
+   ARE DISCLAIMED.  IN NO EVENT SHALL THE AUTHOR OR CONTRIBUTORS BE LIABLE
+   FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL
+   DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS
+   OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION)
+   HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+   LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY
+   OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF
+   SUCH DAMAGE.
+</PRE>
+
+<HR>
+<A NAME="changes">
+<H1>□ 旧版の廃棄要請</H1>
+
+<DL><DT><DD>
+   旧版はすみやかに破棄してください.
+   旧版からの変更点は<A HREF="CHANGES.ja">CHANGES.ja</A>をご覧ください.
+</DL>
+
+<HR>
+<A NAME="bugs">
+<H1>□ 特別採用情報</H1>
+
+<DL><DT><DD>
+   各カテゴリで許されるデータの長さの最大長をチェックしていません.
+   まず,
+   4096バイトを越えるデータは
+   caleidlink がファイルを読み込む際に部分的に削除されますのでご注意ください.
+   (また, 900文字くらいを越えて caleidlink が切り詰める長さの間で,
+   カレイドの最大長を越えると転送に失敗するようですので注意して下さい?)
+</DL>
+
+<HR>
+<A NAME="support">
+<H1>□ 対応機種</H1>
+
+<UL>
+<LI> caleidlinkの対応機種 <BR>
+   Linux で開発しています. (過去は NetBSD で開発していました).
+   現在のところホスト側は:
+   <UL>
+   <LI>FreeBSD 2.2 for PC compatible (FreeBSD 2.2.2, 2.2.7, 2.2.8)
+   <LI>Linux for PC compatible (Debian GNU/Linux 2.0, Slackware 3.4, RedHat 5.0/linux 2.0.30, Turbo8)
+   <LI>NetBSD 1.4 for PC compatible (NetBSD 1.4.1)
+   <LI>Solaris 2.6 for SUN Sparc Ultra-2
+   </UL>
+   のみ動作確認しています.
+   また,カレイド側は:
+   <UL>
+   <LI> XM-700
+   <LI> XM-500 (Solaris は不可)
+   <LI> XM-550EM (〃)
+   <LI> EM-10 スナップパレット (〃)
+   <LI> RX-50 モバイルユニット (〃)
+   <LI> XM-750 (Linuxで動作との報告あり)
+   <li> PV-S250, PV-S1600 reported and patched by Johannes Steingraeber.
+   </UL>
+   のみ動作確認しています.
+   原理的には XM-400 でも動作することが予想できますが,
+   動作を保証することはできません.
+<P>
+<TABLE BORDER="2" CELLSPACING="2" CELLPADDING="2" ALIGN="left">
+<TR>
+  <TH> OS </TH> <TH> Machine </TH> <TH> XM-700/750 </TH> <TH> XM-500/XM-550EM </TH> <TH> EM-10/RX-50 </TH>
+</TR>
+<TR>
+  <TD> FreeBSD </TD> <TD> PC compatible </TD> <TD> ○  </TD> <TD> ○ </TD> <TD> ○ </TD>
+</TR>
+<TR>
+  <TD> Linux </TD> <TD> PC compatible </TD> <TD> ○  </TD> <TD> ○ </TD> <TD> ○ </TD>
+</TR>
+  <TD> NetBSD </TD> <TD> PC compatible </TD> <TD> ○  </TD> <TD> ○ </TD> <TD> ○ </TD>
+<TR>
+  <TD> Solaris </TD> <TD> Sun Ultra-2 </TD> <TD> ○ </TD> <TD> × </TD> <TD> × </TD>
+</TR>
+</TABLE>
+
+<TABLE>
+<TR>
+  <TD> ○ </TD> <TD> 動作確認 </TD>
+</TR>
+<TR>
+  <TD> × </TD> <TD> 動作不可 </TD>
+</TR>
+</TABLE>
+<BR CLEAR="all">
+<BR>
+
+   対応するカレイドによって make 時のコンパイルフラグの指定が異なります.
+   詳しくは Makefile を御覧ください.
+<P>
+<LI> adiupの対応機種 <BR>
+   アドインをカレイドへ送信する単機能ツールadiupは次の環境で動作します.
+<P>
+<TABLE BORDER="2" CELLSPACING="2" CELLPADDING="2">
+<TR>
+  <TH> OS </TH> <TH> Machine </TH> <TH> XM-700 </TH> <TH> XM-500/XM-550EM </TH>
+</TR>
+<TR>
+  <TD> FreeBSD </TD> <TD> PC compatible </TD> <TD> ○  </TD> <TD> ○ </TD>
+</TR>
+<TR>
+  <TD> Linux </TD> <TD> PC compatible </TD> <TD> ○  </TD> <TD> ○ </TD>
+</TR>
+<TR>
+  <TD> NetBSD </TD> <TD> PC compatible </TD> <TD> ○  </TD> <TD> ○ </TD>
+</TR>
+<TR>
+  <TD> Solaris </TD> <TD> Sun Ultra-2 </TD> <TD> ○ </TD> <TD> × </TD>
+</TR>
+<TR>
+  <TD> MS-DOS </TD> <TD> PC compatible </TD> <TD> ○ </TD> <TD> ○ </TD>
+</TR>
+</TABLE>
+<P>
+   対応するカレイドによって make 時のコンパイルフラグの指定が異なります.
+   詳しくは Makefile を御覧ください.
+</UL>
+
+<HR>
+<A NAME="usage">
+<H1> □ 使用方法 </H1>
+
+<A NAME="install">
+<H2>○ インストールの方法</H2>
+
+<OL>
+<LI> Makefile を読む.
+<LI> ご自分の環境に合わせて Makefile を編集する.
+<LI> <TT>make</TT> を実行する. <BR>
+     MSDOSでアドイン転送ツール(adiup.exe)を作成するときは
+     <TT>make adiup.exe</TT>を実行する.
+     (<A HREF="#adiup">アドイン送信ツールについて</A>を参照).
+
+<LI> root になる.
+<LI> make install を実行する. <BR>
+     Makefile で指定されたディレクトリに caleidlink がコピーされます.
+     xmclink がある時は指定されたディレクトリに xmclink と
+     いくつかのピックスマップがコピーされます.
+</OL>
+
+<A NAME="launch">
+<H2>○ caleidlink の起動方法</H2>
+
+<UL>
+<LI> 以下のように起動します.
+<PRE>
+    Usage: caleidlink [-a|-p] [-f]
+                 [-dDEVICE] [-sSPEED] [-cSYSTEM] [-tDELIMITER] [-lLOG]
+                 [-S|-B|-R] folder [category] [object]
+    
+    Options:
+            -S: Synchronize
+            -B: Backup
+            -R: Restore
+    
+            -a: active synchronization
+            -p: passive synchronization
+            -f: force to synchronize, backup and restore,
+                and protect consistent synchronization
+    
+            -dDEVICE (default: -d/dev/ttyS0) Serial device name
+            -sSPEED (default: -s38400) 4800,9600,19200,38400bps
+            -cSYSTEM (default: -ci) Coding system
+              [i|e|s] i:iso-2022-jp, e:euc-japan, s:shift-jis
+            -tDELIMITER (default: 44 = comma) Decimal number of the delimiter
+            -lLOG Logging file name
+</PRE>
+<P>    
+<LI> -S, -B, -R は caleidlink の動作モードを指定します. <BR>
+   動作モードを指定しない場合はデータ表示モードになります.
+<P>
+<LI> -S はシンクロナイズ・モードを指定します. <BR>
+   この時に指定するフォルダ名とは,
+   CALEID のデータをファイルに展開する時のトップディレクトリ名のことです.
+   存在しない場合は新規のシンクロナイズを行なうものと見なされます.
+   存在する場合は,
+   フォルダ内に展開されたファイルのデータに基づいて
+   シンクロナイズが行なわれます.
+   ディレクトリのみが存在している場合は新規と同じ扱いになります.
+<P>
+   データの送受信もシンクロナイズ・モードで行ないます.
+<P>
+<LI> -B はバックアップ・モードを指定します.<BR>
+   この時はバックアップ・ファイル名を指定します.
+   ディレクトリ名ではありません.
+<P>
+<LI> -R はリストア・モードを指定します.<BR>
+   この時はバックアップ・ファイル名を指定します.
+   ディレクトリ名ではありません.
+<P>
+<LI> -a を指定するとデフォルトの設定に関係なくアクティブ・シンクロナイズを行ないます.
+     アクティブ・シンクロナイズは
+     XM-500 などのクレイドルを使用しないカレイドと通信を行なう場合に使用します.
+<LI> -p を指定するとデフォルトの設定に関係なくパッシブ・シンクロナイズを行ないます.
+     パッシブ・シンクロナイズの場合,
+     caleidlink は起動後に『待ち受け状態』となり,
+     クレイドルのスタートボタンを押すことで通信を開始する場合に使用します.
+<LI> -f を指定すると新規のシンクロナイズの場合とバックアップの場合,
+     そして, リストアの場合に caleidlink から人間への確認の問合せを行ないません.
+     危険ですから絶対に人間は指定しないでください.
+     ただしこの場合,
+     caleidlink はセッション ID の一致しない CALEID とはシンクロナイズを行ないません.
+<P>
+<LI> DEVICE はシリアルのデバイス・ファイル名です.
+     FreeBSDでは /dev/cuaa{0|1} など,
+     Linuxでは /dev/ttyS{0|1} など,
+     Solarisでは /dev/cua/{a|b} などを使用します.
+<LI> SPEED はシリアルの通信速度です.
+<LI> SYSTEM はファイルを書き出す際に使用されるコード系です.
+     指定できるのは i, e, s です. デフォルトで iso-2022-jp が使用されます.
+<LI> DELIMITER はデータ表示で使われるデータの区切り文字(コード)です.
+     10進数でコードを指定して下さい.デフォルトで 44 (カンマ) が使用されます.
+<LI> LOG を指定するとカレイドとホストの通信をファイルに保存することができます.
+</UL>
+
+<A NAME="serial">
+<H2>○ シリアルのパーミション</H2>
+
+<DL><DT><DD>
+   caleidlinkはシリアルデバイスを用いてCALEIDと通信します.
+   シリアル通信を行なうためには,
+   caleidlink の実行時の実ユーザ ID にデバイスファイルを読み書きできるパーミションが与えられていなければなりません.
+   デバイスファイルとは:
+   <UL>
+   <LI> FreeBSD では /dev/cuaa0 や /dev/cuaa1 など
+   <LI> Linuxでは /dev/cua0 や /dev/cua1 など
+   <LI> Sun Solaris では /dev/cua/a や /dev/cua/b など
+   </UL>
+   のファイルのことです
+   パーミションの与え方は色々あると思いますが,
+   使用したいシリアルデバイスのグループに自分のユーザ ID を追加して,
+   そのグループに対して読み書き可のパーミションを与えておけばよいと思います.
+</DL>
+
+<A NAME="lock">
+<H2>○ ロック・ファイル</H2>
+
+<DL><DT><DD>
+  caleidlinkは指定されたデバイスを開く時に『ロック・ファイル』を生成します.
+  このファイルはデフォルトでは/tmpディレクトリに作られます.
+  ファイルの名前は,
+   デバイス名に含まれるスラッシュ(/)をピリオドに置き換えた文字列を
+  ``clink'' の後に付加したものです.
+<P>
+  例) デバイスが /dev/cuaa0 なら /tmp/clink.dev.cuaa0,
+	/dev/cua/a なら /tmp/clink.dev.cua.a
+<P>
+  既にロック・ファイルが存在していた場合,
+  つまり,
+  同じデバイスを開いているcaleidlinkが存在する場合,
+  caleidlinkを起動することが出来ません.
+<P>
+  ロックファイルの中には実行中のcaleidlinkのプロセスIDが書き込まれています.
+  このファイルは通常, caleidlinkの終了時に削除されますが,
+  caleidlinkが異常終了した場合には削除されないことがあります.
+<P>
+  caleidlinkが起動されていないのに,
+  ロック・ファイルが存在するというエラーが表示された時は,
+  psコマンドなどを利用して
+  ロック・ファイル中のプロセスIDを持つ
+  caleidlinkが起動されていないかを確認して下さい.
+  もし,そのようなプロセスがない場合は,
+  単純にそのファイルを削除することにより,
+  問題なくcaleidlinkを起動できるようになります.
+</DL>
+
+<A NAME="synchronize">
+<H2>○ シンクロナイズの方法</H2>
+
+<OL>
+<LI> CALEID をクレイドルに乗せてください.
+     (XM-500の場合はケーブルを接続するだけで結構です.)
+<LI> caleidlink をシンクロナイズ・モードで起動してください.
+<LI> クレイドルの『スタート』ボタンを押してください.
+     (XM-500 の場合はなにもしなくて結構です.)
+<LI> シンクロナイズが始まります.
+<LI> 新規のシンクロナイズの場合,
+     シンクロナイズを実行してもよいかどうかを caleidlink は問い合せます.
+     y か n で答えてください.
+<LI> 自動的にシンクロナイズが終了します. 38400bps で数十秒かかります.
+</OL>
+
+<A NAME="backup">
+<H2>○ バックアップの方法</H2>
+
+<OL>
+<LI> CALEID をクレイドルに乗せてください.
+     (XM-500の場合はケーブルを接続するだけで結構です.)
+<LI> caleidlink をバックアップ・モードで起動してください.
+<LI> ファイルを作成してもよいかどうかを caleidlink が問い合せます.
+     y か n で答えてください.
+<LI> クレイドルの『スタート』ボタンを押してください.
+     (XM-500 の場合はなにもしなくて結構です.)
+<LI> バックアップが始まります.
+<LI> 自動的にバックアップが終了します. 38400bps で 20分ほどかかります.
+</OL>
+
+<A NAME="restore">
+<H2>○ リストアの方法</H2>
+
+<OL>
+<LI> CALEID をクレイドルに乗せてください.
+     (XM-500の場合はケーブルを接続するだけで結構です.)
+<LI> caleidlink をリストア・モードで起動してください.
+<LI> リストアを行なってもよいかどうかを caleidlink が問い合せます.
+     y か n で答えてください.
+<LI> CALEID をリセットしたかどうかを caleidlink が問い合せます.
+     y か n で答えてください. 実際にはリセットは必要ないようです.
+<LI> クレイドルの『スタート』ボタンを押してください.
+     (XM-500 の場合はなにもしなくて結構です.)
+<LI> リストアが始まります.
+<LI> 自動的にリストアが終了します. 38400bps で 30分ほどかかります.
+</OL>
+
+<A NAME="data">
+<H2>○ データ・ファイルの送受信</H2>
+
+<DL><DT><DD>
+   『アドイン』と『イージーシート』については,
+   見かけ上はcaleidlinkのシンクロナイズモードで送受信を行ないますが,
+   通常のシンクロナイズとはデータ送受信の機構が異なるため,
+   厳密にはシンクロナイズすることは出来ません
+   (参考:<A HREF="#trouble">トラブルシューティング</A>).
+   caleidlink では,
+  『データの個数』のみを見てデータの送受信の必要性を判断しています.
+   
+<P>
+   ※ たまたまデータの個数が一緒だと,
+      ファイルの内容に更新があっても送受信は行なわれません.
+   <BR>
+   ※ ファイル名を変更すると変更前のファイルが『削除』されたと認識されてしまいます.
+<P>
+   データの個数がカタログの値と異なる場合,
+   カレイド側の全てのデータを受信し,
+   UNIX側のファイルを全て削除(ファイル名に``.bak''を追加)します.
+   逆に送信については,
+   イージーシート用とアドイン用のディレクトリに新しいファイルを置くと,
+   シンクロナイズの際に新しいファイルを常に追加モードで送信します.
+   ここで送ったファイルの個数はカタログに追加されるため,
+   次のシンクロナイズ時にデータが全て受信されるということはありません.
+</DL>
+
+<A NAME="browse">
+<H2>○ データ表示の方法</H2>
+
+<OL>
+<LI> カテゴリ一覧の表示 <BR>
+	フォルダ名のみを指定してcaleidlinkを起動すると,
+	そのフォルダに含まれるカテゴリの一覧を表示します.
+	表示される内容はオプション-tで指定したコード区切りで:
+	<P>
+	<UL>
+	<LI> カテゴリID
+	<LI> フォルダ直下のディレクトリ
+	<LI> カテゴリの日本語名
+	</UL>
+	<P>
+	です.
+	この内容と順序はconf/categoriesの内容に従います.
+	なお,文字列のコード系の指定も有効です.
+<P>
+<LI> カタログの表示 <BR>
+	フォルダ名,カテゴリ名(あるいはカテゴリID)を指定してcaleidlinkを起動すると,
+	そのフォルダに含まれる指定したカテゴリのカタログ(オブジェクト一覧)を表示します.
+	表示される内容はオプション-tで指定したコード区切りで:
+	<P>
+	<UL>
+	<LI> オブジェクトの格納されているファイル名
+	<LI> 見出しファイルの順番に従って,全ての項目の1行目を切り取ったもの
+	</UL>
+	<P>
+	です.
+	横方向の順序は,
+	それぞれのカテゴリに対応する見出しファイル(*.heading)の内容に従います.
+	縱方向の順序はCALEIDが通信時に出力する順序です.
+	なお,文字列のコード系の指定も有効です.
+<P>
+<LI> オブジェクトの表示 <BR>
+	フォルダ名,カテゴリ名(あるいはカテゴリID),オブジェクトのファイル名(あるいはオブジェクトID)を指定すると,
+	そのオブジェクトを表示します.
+	なお,文字列のコード系の指定も有効です.
+</OL>
+
+<A NAME="xmclink">
+<H2>○ Motif版ラッパー (xmclink) </H2>
+
+<DL><DT><DD>
+  xmclinkはMotifツールキットを使用して作成されたX11クライアントです.
+  外部プログラムとしてcaieldlinkを使用することによって,
+  X上でシンクロナイズ/バックアップ/リストア/ファイル閲覧/ファイル編集を実行することができます.
+</DL>
+
+<A NAME="htclink">
+<H2>○ Web版ラッパー (htclink) </H2>
+
+<DL><DT><DD>
+  Perlで作成されたCGIプログラムです.
+  外部プログラムとしてcaieldlinkを使用することによって,
+  Webブラウザからシンクロナイズ/バックアップ/リストアを実行することができます.
+  また,
+  ブラウザ上でcaieldlinkのフォルダの内容を閲覧したり,
+  ファイルを特定してエディタを起動したりすることができます.
+  <P>
+  htclinkの詳細についてはhtclinkの
+  <A HREF="HTCLINK.ja">ドキュメント(HTCLINK.ja)</A>をご覧ください.
+</DL>
+
+<HR>
+<A NAME="hotsync">
+<H1> □ シンクロナイズについて </H1>
+
+<A NAME="prepare">
+<H2>○ シンクロナイズ前の準備</H2>
+<UL>
+<LI> シンクロナイズを実行する前に,
+   CALEIDのデータを保存するためのディレクトリを作成し,
+   そのディレクトリの中に,
+   このアーカイブに含まれる
+   conf というサブディレクトリを丸ごとコピーして下さい.
+   <FONT COLOR=#FF0000>特にconf/categoriesというファイルをコピーしないと,
+   シンクロナイズを実行することができません.</FONT>
+<P>
+<LI> ※ XM-700 を使う場合は注意して下さい.
+   conf/categories というファイルを編集する必要があります.
+   その中の 00F000 data という行をコメントにして(行頭に#を挿入する),
+   00D000 note/checklist という行のコメントを外して下さい(行頭の#を削除する).
+<P>
+   あるいは conf/categories の代わりに
+   categories.XM700 というファイルを
+   conf/categories にリネームして使って下さい.
+<P>
+<LI>
+   ※ 同様に EM-10, RX-50 を使用する場合は categories.EM10 というファイルを
+   conf/categories にリネームして使って下さい.
+   EM-10/RX-50 には, 電話帳の一部とメモ帳の一部,
+   アドイン, イージーシートの機能がありません.
+</UL>
+
+<A NAME="conf">
+<H2>○ シンクロナイズ用設定ファイル</H2>
+
+<DL><DT><DD>
+   confディレクトリの中には次のような重要な設定ファイルが格納されています.
+   <P>
+   ここではフォルダ名 (トップ・ディレクトリ名) を TOP と表します.
+</DL>
+
+<UL>
+<LI> カテゴリ・ファイル (TOP/conf/categories)<BR>
+   CALEID データのカテゴリと対応するディレクトリ名,
+   および日本語の別名を指定します.
+<P>
+   例)
+<PRE>
+	100000 private 電話帳・個人
+	110000 business 電話帳・会社
+	101000 phone/shop 電話帳・店名
+	102000 phone/others 電話帳・その他
+	000000 memo メモ帳・メモ
+	200000 schedule スケジュール
+	220000 todo ToDo
+</PRE>
+   それぞれのカテゴリのデータは, TOP の下の,
+   ここで指定したディレクトリに格納されます.
+<P>
+   例)
+<PRE>
+	TOP/private/データ
+	TOP/business/データ
+	TOP/phone/shop/データ
+	TOP/phone/others/データ
+	TOP/memo/データ
+	TOP/schedule/データ
+	TOP/todo/データ
+</PRE>
+<P>
+<LI> 見出しファイル (*.heading) <BR>
+   それぞれのカテゴリについて,
+   カテゴリ・ファイルで指定したディレクトリ名に対応して,
+   TOP/conf の下に見出しファイルを作ります.
+<P>
+   例)
+<PRE>
+	TOP/private.heading
+	TOP/business.heading
+	TOP/conf/phone/shop.heading
+	TOP/conf/phone/others.heading
+	TOP/conf/memo.heading
+	TOP/conf/schedule.heading
+	TOP/conf/todo.heading
+</PRE>
+   見出しファイルの内容は, 次のように, 項目に対する見出しです.
+<P>
+   例)
+<PRE>
+	001000 個人名: S
+	009000 個人名読み: S
+	003000 自宅電話: S
+	003020 携帯電話: S
+</PRE>
+
+   この例では各見出しの最後に意図的に『: (コロン)』を加えています.
+   自動的に付加される訳ではありませんので御注意ください.
+<P>
+   1行の最後の文字 S は項目の型を表しています. 項目の型には今のところ:
+
+<PRE>
+	S 文字列
+	B バイナリ
+	D 日付 (19970101 や 1997/01/01, 1997/1/1 など)
+	T 時刻 (0101 や 01:01, 1:1 など)
+	C 見出し抜き・連続 (指定しないで下さい)
+</PRE>
+
+   があります. 文字列はコード変換の対象となり,
+   バイナリは base64 で符号化してファイルに記録されます.
+   (CALEID が base64 で記録する訳ではない)
+<P>
+<LI> カタログ・ファイル (*.catalog) <BR>
+	各カテゴリのデータの一覧を格納するファイルです.
+	人間は絶対に編集しないでください.
+<P>
+<LI> ホストID (host.id) <BR>
+	4バイトからなる好きな文字列を指定します.
+	デフォルトでCLNKです.
+	この文字列は次に説明するセッションIDの一部となります.
+	新規のシンクロナイズ以外は変更しないでください.
+<P>
+<LI> セッションID (session.id) <BR>
+	次のシンクロナイズ用のセッションIDです.
+	このセッションIDがホスト側とカレイド側で一致するということは,
+	両者のデータが同期していることを意味します.
+	ですから変更しないでください.
+<P>
+<LI> オブジェクトID (object.id) <BR>
+	最終オブジェクト番号です.
+	変更しないでください.
+</UL>
+
+<A NAME="create">
+<H2>○ データ作成のシンクロナイズ</H2>
+
+<DL><DT><DD>
+   CALEID 側で新しく作成したデータは
+   各カテゴリのデータが置かれるディレクトリにファイルとして書き出されます.
+   ファイル名はオブジェクト ID 名です.
+<P>
+   各カテゴリのデータが置かれるディレクトリに,
+   新しくファイルを作成した場合,
+   それは新規データとして CALEID に送信されます.
+   その場合,
+   他のオブジェクトと重ならないように『英数字 6文字』のファイル名は
+   使用できません.
+   また, ファイル名の最後が『.org』『.bak』
+   『~ (ニョロ. emacs のバックアップ・ファイル)』のファイルと
+   ファイル名の先頭が『# (イゲタ)』のファイルは
+   新規ファイルとして認識されません.
+</DL>
+
+<A NAME="modify">
+<H2>○ データ更新のシンクロナイズ</H2>
+
+<DL><DT><DD>
+   CALEID で更新されたデータは
+   新規のシンクロ時に決定された同じファイル名で上書きされます.
+<P>
+   UNIX 側ではシンクロナイズ時に
+   全てのデータ・ファイルの更新時刻を記録しています.
+   そのため, 一度シンクロナイズした後にファイルを更新すると,
+   更新されたデータとして認識され CALEID に送信されます.
+<P>
+   CALEID と UNIX 双方のデータが更新されていた場合,
+   UNIX のファイルを新規のオブジェクトとして CALEID に送信します.
+</DL>
+
+<A NAME="remove">
+<H2>○ データ削除のシンクロナイズ</H2>
+
+<DL><DT><DD>
+   CALEID でデータが削除されると,
+   対応する UNIX 側のファイルの拡張子が『.bak』に変更されます.
+<P>
+   UNIX 側のファイルを削除すると,
+   対応する CALEID のオブジェクトを削除する命令を送信します.
+</DL>
+
+<A NAME="originals">
+<H2>○ 既存ファイルの保存 </H2>
+
+<DL><DT><DD>
+   caleidlink はファイルを新規に作成する場合に, 既に同名のファイルが存在する
+   ならば, 元のファイルを拡張子『.org』で保存します. しかし, もれなく
+   やっていない可能性もあるので, まずいところがあれば教えてください.
+</DL>
+
+<A NAME="categories">
+<H2>○ カテゴリ・ファイルの編集</H2>
+
+<DL><DT><DD>
+   カテゴリ・ファイル (categories) を編集してディレクトリ名を変更
+   する場合, 既存のディレクトリ名, 見出しファイル名, カタログ・ファイル
+   名も, もれなく変更してください.
+<P>
+   また, 該当するディレクトリは cp -r ではなく mv して下さい.
+   caleidlink は各データ・ファイルの更新時刻を記録しています.
+   タイムスタンプが変った場合, 内容が同一でも通信が行なわれます.
+</DL>
+
+<HR>
+<A NAME="format">
+<H1>□ データフォーマットについて</H1>
+
+<A NAME="text">
+<H2>○ テキストについて</H2>
+
+<DL><DT><DD>
+   通常のテキストはオブジェクトを単位として,
+   行ごとにフィールドIDと見出しと内容を1個の空白かタブで狭んだ形式で格納されます.
+   改行を含むフィールドは
+   改行した行の先頭に TAB (0x09) を挿入してファイルに保存しています.
+   UNIX 側でファイルを作成する場合も,
+   2行以上にまたがるフィールドでは 2行目以降の行頭に TAB を挿入してください.
+<P>
+   例) 電話帳などのテキスト・フォーマット
+<PRE>
+002000 自宅住所: 神奈川県川崎市中原区
+	下小田中 *丁目 *番 *号
+	JR南武線中原駅下車 徒歩15分
+000000 備考: 2行以上にまたがるフィールドでは
+	2行目以降の行頭に TAB が挿入されます.
+</PRE>
+
+</DL>
+
+<A NAME="memo">
+<H2>○ メモ帳について</H2>
+
+<DL><DT><DD>
+   メモ帳の「メモ」および「クイックデータコピー」の場合だけ,
+   ファイルは「そのまま」の形式でファイルへ格納します.
+   見出しをつけるなどの修正は必要ありません.
+   ただし,
+   文字コードは通常のテキストと同様のルールが適用されます.
+<P>
+   例) メモ帳・メモ/クイックデータコピーのテキスト・フォーマット
+<PRE>
+メモ帳の「メモ」および「クイックデータコピー」の場合だけ,
+ファイルは「そのまま」の形式でファイルへ格納します.
+見出しをつけるなどの修正は必要ありません.
+</PRE>
+</DL>
+
+
+<A NAME="encoding">
+<H2>○ 文字列のコード系について</H2>
+
+<DL><DT><DD>
+   caleidlink では全ての文字列について iso-2022-jp, euc-japan, shift-jis を
+   判別します. この時, shift-jis の半角カタカナのみで構成される文字列は
+   誤って euc-japan と判別されることがありますので, 単独の半角カタカナ
+   (たとえば見出しに 『(半角)コジンメイ』など) は絶対に使用しないで下さい.
+   漢字文字列中に半角カタカナが含まれることは問題ありません.
+</DL>
+
+<A NAME="date">
+<H2>○ 日付について </H2>
+
+<DL><DT><DD>
+   *.heading ファイルの設定を通じて日付を D, 時刻を T という型で設定すると,
+   日付については 19970101 や 1997/01/01 などが通るようになります.
+   時刻についても同様に 0101 や 01:01 が通るようになります.
+</DL>
+
+<A NAME="length">
+<H2>○ 長さに関する注意点 </H2>
+
+<DL><DT><DD>
+   その他のフィールドについても, フォーマットや長さが間違っていると転送に
+   失敗するようですので注意してください. 長さについては, 各フィールドの
+   長さをチェックして 1023 バイト以上の場合は標準エラー出力に warning を
+   表示します. また, 3072 バイト以上のデータは行単位で切り詰めます.
+   この切り詰めはカレイドの最大長ではありません
+   (何バイトに切り詰めたらよいかが分からない).
+   長すぎると転送に失敗するようですのでご注意ください.
+   <P>
+   メモ帳・メモおよびメモ帳・クイックデータコピーの最大長は1023文字のようです.
+   これはバイト数ではなく文字数です.
+   1023文字を越えた場合は読み込んだ際にwarningメッセージを表示します.
+</DL>
+
+<A NAME="quickform">
+<H2> ○ クイックフォームについて </H2>
+
+<DL><DT><DD>
+   クイックフォームのデータは
+   base64 で符号化した上で通常のテキストに格納されます.
+   このデータはhtclinkあるいはquickform2gif.plを利用することによってGIF形式に変換することができます.
+   また逆にgif2quickform.plを利用すればGIF形式あるいはJPEG形式の画像データをクイックフォーム・データに変換することができます.
+   <p>
+   これらのPerlスクリプトは画像処理に『netpbmパッケージ(portable anymapユーティリティ)』を利用しますので,
+   別途パッケージを入手してインストールしてください.
+</DL>
+
+<A NAME="sheet">
+<H2>○ イージーシートのフォーマット </H2>
+
+<DL><DT><DD>
+   イージーシートのデータは次のフォーマットで読み込み/書き込みされます.
+   文字コードは通常のテキストと同様のルールが適用されます.
+<P>
+   <UL>
+   <LI> 1行目: タイトル
+   <LI> 2行目: サイズ(行数,桁数)
+   <LI> 3行目: セルの情報
+<PRE>
+「C*W*R*」のカンマ区切り
+
+C0: 3桁区切りしない
+C1: 3桁区切りする
+W?: 桁数 (4,6,8,10,12,14,16,18,20)
+R0: 小数点以下非表示
+R2: 小数第二位まで表示
+RF: 小数点・設定なし
+</PRE>
+   <LI> 4行目以降: CSVファイル(カンマ区切りのデータ列)
+   </UL>
+<P>
+   他のアプリケーションで作った
+   CSVファイルを上記のフォーマットに変換するツールを用意しています.
+   このアーカイブに含まれるcsvimport.plをご利用下さい.
+<P>
+   1024バイト以上のCSVファイルを転送することができます.
+   ただし, あまり大き過ぎると(570セル? 32Kバイト以上?)
+   転送に失敗するので注意して下さい.
+</DL>
+
+<A NAME="addin">
+<H2> ○ アドインのフォーマット </H2>
+
+<DL><DT><DD>
+   アドイン (addin) のデータは直接, バイナリファイルとして書き込まれます.
+   また, ネット上などで配布されるアドイン (*.adi)
+   を直接カレイドに送信することができます.
+<P>
+   Niftyserve の FPDA フォーラムに優れたアドインが
+   多数アップロードされています.
+   作者の皆様に感謝しております.
+   また CALEID の Web ページに開発用キットがあります.
+   ただし, 私の大嫌いな ;-) Microsoft Windows 用しかありません.
+   誰か UNIX 用を作ってください.
+</DL>
+
+<HR>
+<A NAME="tips">
+<H1> □ Tips </H1>
+
+<A NAME="newssource">
+<H2>○ Web上のニュースソースの取り込みツールについて</H2>
+
+<DL><DT><DD>
+   濱田さん &lt;hama@sunny.co.jp&gt; から素晴しいツールを提供して頂きました.
+   ご本人の承諾のもとにcaleidlinkと一緒に配布させて頂きます.
+<P>
+   このツール(getasahicom, splitpart)を使用すると,
+   Web上のニュースソースを取り込み,
+   一件づつのニュースをファイルとして切り出すことができます.
+   それらの取り込んだファイルをcaleidlinkを使用してCALEIDに転送することにより,
+   Webブラウザの代わりにCALEIDでニュースが読めるようになります.
+   出掛ける前にニュースをCALEIDに転送しておけば,
+   通勤・通学などの暇な時間を有効に過すことができることと思います.
+<P>
+   このツールは濱田さんのサイトでも公開されています.
+   <A HREF="http://www.sunny.co.jp/~hama/files/caleid.html">
+   『CALEID Asahicom reader』
+   </A>
+   (http://www.sunny.co.jp/~hama/files/caleid.html)
+   をご覧ください.
+</DL>
+
+<A NAME="adiup">
+<H2>○ アドイン送信ツールについて</H2>
+
+<DL><DT><DD>
+   伊藤さん &lt;JAC02452@nifty.ne.jp&gt; の要望で
+   MSDOS からアドインを送信するツールadiupを作成しました.
+   make adiup.exe で作ることができます.
+   コンパイラは LSI-C 86 試食版を使ってください.
+<P>
+   adiup.exe の実行にはシリアル用デバイスドライバ mcd 0.9 以降が必要です.
+   このドライバを使うことによって IBM-PC, NEC PC9801, 富士通 FMR などで
+   adiup.exe を実行することができます.
+   adddrv を使って mcd を組み込む際には, 次のような定義ファイル:
+<P>
+   <BLOCKQUOTE>
+     device=mcd***.exe /fr /b9600
+   </BLOCKQUOTE>
+<P>
+   を作って組み込んで下さい. ("mcd***" は, あなたの使う mcd の名前).
+<P>
+   MSDOS版およびWindows版のバイナリとスクリプトをセットにしたアーカイブが伊藤さんのサイトで配布されています.
+   <A HREF="http://hp.vector.co.jp/authors/VA003746/CALEID1X.HTM">
+   『CALEIDとパソコンの連携』
+   </A>
+   (http://hp.vector.co.jp/authors/VA003746/CALEID1X.HTM)
+   をご覧ください.
+</DL>
+
+<A NAME="secret">
+<H2>○ シークレットモードについて</H2>
+
+<DL><DT><DD>
+  カレイドにはセキュリティ上の配慮から,
+  暗証番号を入力しないと見ることのできない「シークレット」というモードがあります.
+  このモードは,
+  通常の「オープン」モードとは完全に独立してシンクロナイズが行なえます.
+<P>
+  シークレット・モードの情報をシンクロナイズする場合は,
+  「カレイド側がシークレット・モードに入っている」時に,
+  通常とは「別の名前のフォルダを指定」して
+  caleidlink からシンクロナイズを実行してください.
+<P>
+  ただし, シークレット・モードのシンクロナイズには,
+  残念ながら次のような問題点があります.
+  それは, 「アドイン」と「イージーシート」のデータが,
+  シークレット・モードとオープン・モードで共有されてしまうことです.
+  そのため,
+  これらのデータに関して無駄なダウンロードが発生する可能性があります.
+<P>
+  シークレット・モードに入った後に電源を OFF にすると,
+  動作モードは強制的にオープン・モードに変更されます.
+  シークレット・モードのつもりで
+  オープン・モードからシンクロナイズを行なわないように注意して下さい.
+  具体的には,
+  セッション ID が一致しない場合には確認メッセージが表示されますので,
+  あわてずに 'n' と答えて下さい.
+</DL>
+
+<A NAME="transition">
+<H2>○ XM-700 から XM-500 へのデータ移行について</H2>
+
+<DL><DT><DD>
+   XM-500 では XM-700 の時に存在した「メモ帳・チェックシート」が
+   廃止になり「メモ帳・クイックデータコピー」が新設されています.
+<P>
+   そして厄介なことに XM-500 では旧「メモ帳・チェックシート」は
+   シンクロナイズできないようです. (古い caleidlink ではシンクロに失敗する).
+<P>
+   そこで, 「メモ帳・チェックシート」(カテゴリ ID = 00D000) のデータは
+   別のカテゴリに移す必要があります.
+<P>
+   これに関連して, XM-500 とのシンクロナイズの前に次のことを行なって
+   してください.
+<P>
+   フォルダ配下の conf/categories を編集します.
+   その中の 00D000 note/checklist という行を削除して,
+   00F000 data という行を挿入して下さい.
+<P>
+   さて, 御存知の通り caleidlink には「新規のファイルの名前には,
+   オブジェクト ID に見えそうな名前は付けられない」という制限があります.
+   しかし一方で, カレイドから吸い出したデータはファイル名として
+   「オブジェクト ID」を振っています. そのため, データを移行するためには,
+   そのようなファイルの名前を「英数字 6ケタ」ではない名前に振り直す必要が
+   あります.
+<P>
+   例えば 001234 という名前のファイルは 001234.new などとリネームすれば
+   新規のファイルとして認識することができます. 手作業では面倒ですので,
+   そのようなスクリプトを作って実行すると良いでしょう.
+<P>
+   残念なことに, 手書カレンダーと休日設定についてはシンクロナイズの
+   方法が見つかっていません. ;-) 手書カレンダーと休日設定は新しい
+   カレイドで入力し直して下さい. 
+<P>
+   それ以外については, 特に変更なしにシンクロナイズを実行すれば
+   まるごとデータを移行できるようです.
+</DL>
+
+<A NAME="failure">
+<H2>○ シンクロナイズに失敗した時</H2>
+
+<DL><DT><DD>
+   カレイドの電池が消耗した場合や,
+   送信データのフォーマットが間違っていた場合などに,
+   予期せぬシンクロナイズの失敗が発生することがあります.
+   そのような場合,
+   セッションIDの一致がとれずに,
+   次回のシンクロナイズが「新規シンクロナイズ」と認識される場合があります.
+   <P>
+   そうなってしまった時,
+   素直に「新規」としてシンクロナイズし直すのも一つの手です.
+   この時,
+   フォルダ名に従来のフォルダとは別の名前を指定し,
+   そのフォルダにアーカイブに含まれる conf 配下のファイルを
+   丸ごとコピーしておくことを忘れないで下さい.
+   <P>
+   新規にシンクロナイズを行なえば,
+   後々,
+   オブジェクトIDの不整合などの問題が起こらないため,
+   一般的に安全だと言うことができます.
+   ただし,
+   その場合,
+   それまでにオブジェクトID以外のファイル名を与えていたファイルの名前が,
+   全てオブジェクトIDで振り直されてしまいます.
+   実害はないと思いますが,
+   新規シンクロナイズには時間がかかることを御容赦頂きたいと思います.
+   <P>
+   そうでなく,
+   無理矢理,
+   前回までのシンクロナイズを引き継ぎたい場合には,
+   フォルダ配下の conf/*.org に前回のセッションID や重要な ID
+   が保存されているはずなので,
+   それらを元に状態を復活させることができる可能性があります.
+   <P>
+   *.org を利用した,
+   状態の復活は,
+   あまりお勧めできませんが,
+   それがどうしても必要な場合には,
+   *.org が保存されていることを思い出して,
+   活用なさって下さい.
+</DL>
+
+<A NAME="damage">
+<H2>○ タッチパネルがいかれた時</H2>
+
+<UL>
+<LI> 私の体験 <BR>
+	以前 XM-700 を 1m ほど落下させてパネル(ガラス)
+	を破損させてしまったことがあります.
+	この時,タッチパネルがいかれて操作不能に陥いりました.
+	<P>
+	しかし,この状態でもシンクロナイズすることは可能でした.
+	同じような状況におかれた時は,
+	あわてずにシンクロナイズ(か,バックアップを)してから修理を依頼するか,
+	新しい物を買うか,
+	別のメーカのPDAを買うことをお勧めします.
+	なによりデータが大事です.
+</UL>
+
+<HR>
+<A NAME="trouble">
+<H1>□ トラブルシューティング</H1>
+
+<UL>
+<LI> アドイン/イージーシートに関するトラブル <BR>
+   『アドイン』と『イージーシート』はシンクロナイズすることができないため
+   (参考:<A HREF="#data">データ・ファイルの送受信</A>),
+   ファイルの取り扱いに注意が必要です.
+   caleidlinkではデータの個数のみを記録しており,
+   データの個数が異なる場合はカレイド側のデータを全て受信して,
+   UNIX側のファイルを全て削除(ファイル名に``.bak''を追加)してしまいます.
+   そのため,
+   まず,
+   ファイルを更新しても更新したことが認識されません.
+   この場合,
+   元のファイルはそのままにして,
+   別の名前のファイルとして作成すれば新しいファイルとして認識され,
+   新しい内容がカレイドに送信されます.
+   その後,
+   UNIX側の古いファイルとCALEID側の古いデータを削除すればデータ数に不一致は起らないため全ダウンロードを防ぐことができます.
+   <P>
+   同様の理由で,
+   ファイル名を変更する場合にも注意が必要です.
+   ファイル名を変更すると変更前のファイルが『削除』されたと認識されてしまい,
+   記録してあるデータ数とカレイド側のデータ数が一致しないために,
+   そのカテゴリの全ダウンロードが発生してしまいます.
+   これを防ぐには,
+   なるべくファイル名は変更しないか,
+   あるいはファイル名を変更/削除した場合は,
+   前述の通りUNIX側とカレイド側で該当するデータを削除する必要があります.
+   <P>
+   本当はアドイン/シートに関して,
+   ファイル単位の送受信を行なう機能を別途用意すれば,
+   そんな面倒なことは起らないのですが,
+   いろいろな理由で現状では作っていません.
+   ごめんなさい.
+   究極の原因はカレイドを作った人たちがアドイン/シートを
+   (何故か)シンクロナイズできないように作ってしまったことにありますが.
+<P>
+<LI> 転送に失敗する <BR>
+   caleidlinkはカレイドに送信するデータのカレイド側の制限を
+   厳密にチェックしていません.
+   そのため,
+   データの内容によっては送信に失敗する場合があります.
+   このような場合は:
+   <UL>
+   <LI> データ長
+   <LI> データの(カレイド側の)フォーマット
+   </UL>
+   などをご確認ください.
+   基本的には,
+   カレイド側で作成したデータを受信してみて,
+   そのフォーマットに従って修正したものを送信するのが安全です.
+<P>
+<LI> XM-500 で通信タイミングが合わない <BR>
+   一度, 通信が失敗すると,
+   何度ためしても失敗し続ける状態になることがあるようです.
+   この場合, XM-500 の電源を OFF にすると直るようです.
+</UL>
+
+<HR>
+<A NAME="todo">
+<H1>□ ToDo</H1>
+
+<UL>
+<LI> 汎用PIMツールとの統合 <BR>
+	まだ思案中です.
+<P>
+<LI> まだ分かっていないカテゴリ (メール送受信簿など) を調べる. <BR>
+   <UL>
+   <LI> どうもメール送受信簿はシンクロできないようです. イージーシートと
+      アドインについては既に caleidlink で送受信できるようになっています.
+   </UL>
+<P>
+<LI> 手書データのフォーマットを調べる.<BR>
+   <UL>
+   <LI>クイックフォームに関しては読み出すだけならできるようになりました.
+      しかし, シンクロで取り出したデータには先頭に「ゴミ」のようなものが
+      ついており, これが何を意味するのか不明なため, 送信は保証できません.
+      また, 手書カレンダーの内容についても, 部分的に手書データが見えるのですが,
+      途中で切れてしまっていて,
+      また, 「ゴミ」のようなものもくっついているため,
+      どうにも対応できそうにありません.
+   </UL>
+<P>
+<LI> GUI のラッパを作る. (Motif, WWW) <BR>
+   <UL>
+   <LI> Motif のラッパを作っています.
+        私は FreeBSD 用の OSF/Motif 2.0
+        (2万円くらいでした) を使っています.
+        しかし Motif は有料で, プラットフォームも限られるため,
+        下記の WWW バージョンを作成中です.
+   <LI> WWW から caleidlink を操作するラッパを作成中です.
+        ある程度は使える状態になっていると思います.
+   </UL>
+</UL>
+
+<HR>
+<A NAME="bugreport">
+<H1>□ バグレポート</H1>
+
+<DL><DT><DD>
+   バグを発見した場合, すみやかに nrt@ff.iij4u.or.jp までご連絡ください.
+<P>
+   もし, あなたが caleidlink を使用して甚大な被害を被った場合,
+   大変申し訳ありませんが, ぜひ, その状況を報告してください.
+   原因調査とバグフィックスは当然のことながら, caleidlink を使う
+   他の人々にも迅速に, あなたの貴重な情報をアナウンスする義務が
+   あると感じています. 情報を無意味に隠蔽する社会を撲滅しましょう.
+</DL>
+
+<HR>
+<A NAME="seealso">
+<H1>□ これも見てね</H1>
+
+<DL><DT><DD>
+   変更履歴は<A HREF="CHANGES.ja">CHANGES.ja</A>をご覧ください.
+<P>
+   CGI インタフェースから caleidlink を利用する htclink については
+   <A HREF="HTCLINK.ja">HTCLINK.ja</A> をご覧ください.
+   xmclinkおよびadiupについてはドキュメント化はしていません.
+   直接ソースを参照して下さい.
+</DL>
+
+<HR>
+<A NAME="thanks">
+<H1>□ 謝辞</H1>
+
+<DL><DT><DD>
+   caleidlink を『やる』きっかけになった, いとじゅんさん &lt;itojun@itojun.org&gt;.
+<BR>
+   Debian GNU/Linux での動作確認を援助してくれた片山くん &lt;katayama@web.ad.jp&gt;.
+<BR>
+   Slackware での動作確認を援助してくれた松浦くん &lt;matsuura@fenics.se.fujitsu.co.jp&gt;.
+<BR>
+   MSDOS 版 adiup のご要望を頂き,
+   また MSDOS用 &amp; Windows用のバイナリ/スクリプトを配布して頂いています伊藤さん &lt;JAC02452@nifty.ne.jp&gt;.
+<BR>
+   RedHat での動作確認,
+   およびクールなスクリプトを提供してくれた濱田さん &lt;hama@sunny.co.jp&gt;.
+<BR>
+   ありがとうございます.
+</DL>
+
+<HR>
+<A NAME="files">
+<H1>‡ ファイル構成</H1>
+
+<UL>
+<LI> ドキュメント類
+	<UL>
+	<LI> README.ja.html, caleidlinkドキュメント (このファイル)
+	<LI> CHANGES.ja, 変更履歴
+	<LI> HTCLINK.ja, htclink ドキュメント
+	</UL>
+<LI> 設定ファイル
+	<UL>
+	<LI> confディレクトリ配下, カテゴリファイルと見出しファイル
+	<LI> XMclink.ad, xmclink 用リソース
+	</UL>
+<LI> ソース
+	<UL>
+	<LI> Makefile
+	<LI> トップレベル <BR>
+		<UL>
+		<LI> caleidlink.c, version.h
+		<LI> xmclink.c (練習のつもりで私が初めて作ったX11クライアント)
+		<LI> adiup.c
+		<LI> csnoop.c
+		</UL>
+	<LI> フォルダ関連 <BR>
+		show.h, show.c, folder.h, folder.c, base64.h, base64.c
+	<LI> セッション関連 <BR>
+		protocol.h, session.h, session.c, link.h, link.c,
+		sync.h, sync.c
+	<LI> シリアル関連 <BR>
+		serial.h, serial.c, dserial.c, mcd.h, mcd.c
+	<LI> 共通 <BR>
+		import.h, begin.h, boolean.h, util.h, util.c
+	</UL>
+<LI> イメージ
+	<UL>
+	<LI> xpm ディレクトリ配下, xmclink用ピックスマップ
+	<LI> gif ディレクトリ配下, htclink用 GIF イメージと GIF アニメーション.
+	</UL>
+<LI> Perlスクリプト
+	<UL>
+	<LI> cgi-lib.pl, CGI インタフェース
+	<LI> htclink.pl, Perl CGI スクリプト
+	<LI> csvimport.pl, CSV ファイルの加工スクリプト
+	</UL>
+<LI> コントリビューション(contribディレクトリ)
+	<UL>
+	<LI> getasahicom, 濱田さん作, Web上のニュースソースを取り込むスクリプト
+	<LI> getnikkei, Web上のニュースソースを取り込むスクリプト
+	</UL>
+</UL>
+
+<HR>
+<A NAME="glossary">
+<H1>‡ caleidlink 用語集</H1>
+
+<DL><DT><DD>
+この用語は私が勝手に決めたものであり,
+このドキュメントおよびcaleidlinkでのみ通用する用語です.
+<P>
+<DL>
+<DT>フォルダ<DD>
+	CALEID の状態を保存するディレクトリ
+<P>
+<DT>カテゴリ<DD>
+	電話帳・個人, 電話帳・個人・クイックフォーム, メモ帳・メモ,
+	メモ帳・家族, スケジュール, ToDo, 記念日, などの分類のこと.
+	それぞれのカテゴリには ID が振られており,
+	それはカテゴリ ID と呼ぶ.
+<P>
+<DT>オブジェクト<DD>
+	カレイド上のデータ一件一件を指す.
+	あなたが電話帳に自分のデータを入力したならば,
+	それが一件のオブジェクトとなる.
+<P>
+<DT>フィールド<DD>
+	各オブジェクトは複数のフィールドから構成される. 
+	電話帳であれば, 個人名, 個人名読み, などの各項目のこと.
+<P>
+<DT>見出し<DD>
+	個人名, 個人名読み, 自宅電話, 携帯電話, などの総称.
+	各フィールドは見出しと内容から構成される.
+<P>
+<DT>セッション<DD>
+	caleidlinkとの通信.
+	特に個々のシンクロナイズ通信を指す場合が多い.
+<P>
+<DT>セッションID<DD>
+	セッションには特定のIDが振られている.
+	このIDは通信終了時に,
+	ホストとカレイドの間でハンドシェイクして次のシンクロナイズを認識する.
+<P>
+<DT>パッシブ・シンクロナイズ<DD>
+	XM-700やXM-400では,
+	caleidlinkを『待ち受け状態』で起動しておいて,
+	クレイドルのスタートボタンを押すことによって通信を開始する.
+	このモードをパッシブ(受動的)と表現する.
+<P>
+<DT>アクティブ・シンクロナイズ<DD>
+	XM-500はケーブルで直接ホストと継がれ,
+	通信を開始するボタンを持つクレイドルが無い.
+	そこでcaleidlinkを起動すると即座に通信を開始するモードが必要となった.
+	このモードをアクティブ(能動的)と表現する.
+</DL>
+</DL>
+
+<HR>
+
+<ADDRESS>
+<A HREF="http://www.ff.iij4u.or.jp/~nrt/">
+NARITA Tomio
+</A> <BR>
+email: nrt@ff.iij4u.or.jp <BR>
+Homepage: http://www.ff.iij4u.or.jp/~nrt/
+</ADDRESS>
+
+</BODY>
+</HTML>

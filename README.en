@@ -1,0 +1,134 @@
+$Id: README.en,v 1.8 2003/11/17 05:11:08 nrt Exp $
+
+Annotation about CASIO Pocket Viewer.
+
+* TARGET
+	Data synchronization tool between PV and UNIX
+	- pvlink
+		o I heard it actually works with PV-S250 and PV-S1600.
+		  Thanks to Johannes.
+		o Florian sent me a patch for PV-750.
+		  Thanks to Florian <florian@grosse-coosmann.de>
+	- cpvlink (Chinese/big5 version)
+	- caleidlink (original Japanese version)
+
+* INSTALL
+	- examine Makefile and set FLASH_SIZE correctly
+	- do 'make pvlink'
+	- (or, do 'make cpvlink' for Chinese version)
+	- (or, do 'make' for Japanese version)
+
+* CONFIGURATION
+	- You must first make a backup of your PV by true method of CASIO.
+	- prepare a directory which will contain PV data instance
+	  % mkdir ~/pv
+	- examine conf/categories.KNOWN and create conf/categories.PV
+		File format of 'categories' file is:
+			200000 schedule schedule
+			(1)~~~ (2)~~~~~ (3)~~~~~
+		(1) Category ID (you can use known IDs or can find them)
+		(2) Directory (favorite path)
+		(3) Name (favorite name)
+	- install conf/categories
+	  % mkdir ~/pv/conf
+	  % cp conf/categories.PV ~/pv/conf/categories
+
+* 1st SYNCHRONIZATION
+	- launch pvlink
+	  % pvlink -S ~/pv
+
+	> caleidlink: Initial synchronization. Continue? [y/n]: 
+		y [Enter]
+		(start synchronization ...)
+	> Done: Synchronize
+	> Succeeded to Synchronize.
+
+* Trouble Shooting on Synchronization
+	- If you encounter following error:
+
+	> Checking: something
+	> Saving: /home/nrt/pv
+
+	> caleidlink: Sorry, failed to Synchronize.
+
+	It says that the category 'something' in your categories
+	is invalid for your PV. So please remove the line which contains
+	'something' from categories file and try again.
+
+	- If some categories aren't synchronized anyway, please
+	  examine categories file and add similar category ID
+	  and try again. But some categories like e-mail doesn't seem to
+	  have category IDs (really?)
+	  (if you find new IDs, please tell me that. :-)
+
+* EXAMINE files
+	- each file created by pvlink has a file name which is own object ID.
+	- each file contains a few lines.
+	- each line consists of a heading ID and data.
+
+* NAME heading ID
+	- you can name your favorite name to heading ID.
+	- edit heading files under conf directory, like:
+		conf/private.heading
+		conf/business.heading
+	- File format of heading files is:
+			001000 name: S
+			(1)~~~ (2)~~ (3)
+		(1) Heading ID
+		(2) Name (favorite name)
+		(3) Type:
+			S string
+			B binary
+			D date
+			T time
+			(C special)
+
+* 2nd SYNCHRONIZATION
+	- prepare heading files under ~/pv/conf
+	- remove ~/pv/conf/*.id ~/pv/conf/*.catalog
+	- remove all directory under ~/pv except for ~/pv/conf directory
+
+	- BACKUP New Conf!
+	  please backup your new conf directory for future
+	  NEW synchronization.
+
+	- lanch pvlink
+
+	> caleidlink: Initial synchronization. Continue? [y/n]: 
+		y [Enter]
+		(start synchronization ...)
+	> Done: Synchronize
+	> Succeeded to Synchronize.
+
+* EXAMINE files again
+	- each heading may be replaced by your favorite heading
+
+* DATA MANAGEMENT
+	- Changes on PV will be reflected on UNIX
+	- Changes on UNIX will be reflected on PV
+	- Removed files are renamed to *.bak (or *.org)
+	- New files which have names which match *.bak, *.org, *~, #*
+	  are not recognized as new files by pvlink
+	- New files which have names which look like object ID
+	  are not recognized as new files by pvlink
+
+* BACKUP and RESTORE
+	- pvlink -B backup_file_name
+	  PV -> UNIX data backup
+	- pvlink -R restore_file_name
+	  UNIX -> PV data restore
+
+* SHOW
+	- pvlink ~/pv
+	  shows categories
+	- pvlink ~/pv {category_name|category_id}
+	  shows catalog (objects summary)
+	- pvlink ~/pv {category_name|category_id} {object_filename|object_id}
+	  shows object
+
+* HAVE FUN
+	- if you have any question or any suggestion, or find some bugs,
+	  please send email to me.
+
+---
+NARITA Tomio. email:nrt@ff.iij4u.or.jp. \(o|o)/ Vo\/oV
