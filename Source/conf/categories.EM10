@@ -1,0 +1,15 @@
+# categories for EM10/RX50
+200000 schedule スケジュール
+200100 scheduleq スケジュール・クイックフォーム
+200800 term 期間スケジュール
+201000 day 記念日
+220000 todo ToDo
+220100 todoq ToDo・クイックフォーム
+000000 memo メモ帳・メモ
+000100 memoq メモ帳・メモ・クイックフォーム
+00F000 data メモ帳・クイックデータコピー
+100000 private 電話帳・個人
+100100 privateq 電話帳・個人・クイックフォーム
+110000 business 電話帳・会社
+110100 businessq 電話帳・会社・クイックフォーム
+#600000 sheet イージーシート

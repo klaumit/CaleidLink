@@ -1,0 +1,38 @@
+# known CALEID categories (but NOT always valid for your PV)
+200000 schedule schedule
+200100 scheduleq schedule-quick-form
+200800 term long-term-schedule
+201000 day memorial-day
+220000 todo ToDo
+220100 todoq ToDo-quick-form
+000000 memo memo-memo
+000100 memoq memo-quick-form
+00F000 data quick-data-copy
+100000 private phone-private
+100100 privateq phone-private-quick-form
+110000 business phone-business
+110100 businessq phone-business-quick-form
+101000 phone/shop phone-shop
+101100 phone/shopq phone-shop-quick-form
+102000 phone/others phone-others
+102100 phone/othersq phone-others-quick-form
+001000 note/train memo-train
+002000 note/family memo-family
+003000 note/card memo-credit-card
+004000 note/car memo-car
+005000 note/book memo-book
+006000 note/cd memo-cd
+007000 note/video memo-video
+008000 note/insurance memo-insurance
+009000 note/minutes memo-minutes
+00A000 note/info memo-information
+00B000 note/businesstrip memo-businesstrip
+00C000 note/report memo-daily-report
+00D000 note/checklist memo-checklist
+00E000 note/fax memo-fax
+# easy sheet and addin is not for synchronization but for 'send/recv'
+600000 sheet easy-sheet
+700000 addin addin
+#300000 holiday ... cannot get catalog ...
+#320000 handwritten calendar ... data fragment and what??
+#F00000 backup data

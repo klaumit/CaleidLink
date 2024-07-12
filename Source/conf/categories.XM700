@@ -1,0 +1,38 @@
+# categories for XM-700/XM-750/XM-400
+200000 schedule スケジュール
+200100 scheduleq スケジュール・クイックフォーム
+200800 term 期間スケジュール
+201000 day 記念日
+220000 todo ToDo
+220100 todoq ToDo・クイックフォーム
+000000 memo メモ帳・メモ
+000100 memoq メモ帳・メモ・クイックフォーム
+#00F000 data メモ帳・クイックデータコピー
+100000 private 電話帳・個人
+100100 privateq 電話帳・個人・クイックフォーム
+110000 business 電話帳・会社
+110100 businessq 電話帳・会社・クイックフォーム
+101000 phone/shop 電話帳・店名
+101100 phone/shopq 電話帳・店名・クイックフォーム
+102000 phone/others 電話帳・その他
+102100 phone/othersq 電話帳・その他・クイックフォーム
+001000 note/train メモ帳・時刻表
+002000 note/family メモ帳・家族
+003000 note/card メモ帳・カード
+004000 note/car メモ帳・車
+005000 note/book メモ帳・BOOK
+006000 note/cd メモ帳・CD
+007000 note/video メモ帳・映画&ビデオ
+008000 note/insurance メモ帳・保険
+009000 note/minutes メモ帳・議事録
+00A000 note/info メモ帳・連絡書
+00B000 note/businesstrip メモ帳・出張報告
+00C000 note/report メモ帳・日報
+00D000 note/checklist メモ帳・チェックリスト
+00E000 note/fax メモ帳・FAX 送付状
+#イージーシートとアドインは「シンクロナイズ」ではなく「データ送受信」
+600000 sheet イージーシート
+700000 addin アドイン
+#300000 休日設定・うまくカタログを受信できません.
+#320000 手書きカレンダー. 手書データの断片と何??
+#F00000 バックアップ・データ
