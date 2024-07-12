@@ -1,0 +1,69 @@
+#!/usr/bin/perl
+
+#
+# Copyright(C)1999 J.Hamada. hama@sunny.co.jp
+#
+
+#
+# 1番目の引数は、生成するファイルのpathおよびprefixとなる
+#
+# 入力はhtmlで行なわれる。partは次のように構成される
+#
+# <!-- html part start ::part番号::5:: -->
+# <h3>見出し</h3>
+# <p>記事
+# <!-- html part end ::118::5:: -->
+#
+# part startを見つけたら、引数で与えられたprefixに
+# part番号を足してファイル名とし、partの内容を書き込む
+#
+# これをすべてのpartに対して行なう。
+
+$partid = -1; # -1であればpartの外
+
+print "splitting $ARGV[0]:";
+
+while(<stdin>) {
+	if( $partid == -1 ) {
+		# html part startを探す
+		if( /^<!-- html part start ::*([0-9]*)/o ) {
+			$partname = $ARGV[0] . '.' . $1;
+			if(open( PARTFILE , "<$partname" ) ){
+			    print '.';
+			    # 既に同じ記事がある.
+			    close( PARTFILE );
+			}else{
+			    print '*';
+			    # 新規記事を発見.
+			    $partid = $1;
+			    open( PARTFILE ,">$partname" );
+			}
+		}
+	}else{
+		# html part endを見つけるまで該当する内容を書き出していく
+		if( /^<!-- html part end/o ) {
+			# html part endだ。ファイルを閉じて終り.
+			close( PARTFILE );
+			$partid = -1;
+		}else{
+			# うるさい<タグ>を取り除きながら内容を出力してしまおう
+			s/<\w*>//;
+			s/<\/\w*>//;
+			print PARTFILE $_;
+		}
+	}
+}
+
+print "\n";
+
+if( $partid != -1 ) {
+
+	# 大変だ！asahi.comが壊れているぞ。
+	# 親切な私はここで自動的にメールしてあげたいが、
+	# 同じ事を考える人達が一杯いるから大丈夫だろう。
+
+	print 'warning:missing html part end.\n';
+	close( PARTFILE );
+}
+ 
+

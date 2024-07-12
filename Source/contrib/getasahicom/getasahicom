@@ -1,0 +1,48 @@
+#!/bin/sh
+
+#
+# Copyright(C)1999 J.Hamada. hama@sunny.co.jp
+#
+
+#
+# RedHat Linuxの場合にはwgetが標準でインストールされる。
+# FreeBSDの場合にはfetchが標準でインストールされる。
+#
+# GNU wgetを改めてインストールしても良いし、あるいは標準の
+# ものを利用しても構わいません。利用しているproxyとの相性や、
+# あるは既に手なれた設定やスクリプトを考慮して選んで下さい。
+#
+# Perlでfetchする事も出来ますが...proxy回りとかいろいろ
+# 頭痛の種がありますので既にあるものを利用しました。
+#
+
+# RHS Linux
+fetcher='wget -O - '
+
+# FreeBSD
+#fetcher='fetch -o - '
+
+#
+# Caleidのsyncronize先を指定しておいてください。
+# 次の設定はclinkのデフォルトに基づいています。
+#
+data=~/caleid/data
+
+#
+# 以前のバージョンではQuick Data Copyを一度も使った事がない
+# ときには問題を起こしていました。次の1行で修正しました。
+#
+mkdir -p $data
+
+#
+# 取得した記事を自前で管理する場合には次の行はコメントにすること
+#
+
+rm -f $data/asahicom.*
+
+$fetcher http://www.asahi.com/flash/fnational.html      | splitpart $data/asahicom.national
+$fetcher http://www.asahi.com/flash/fpolitics.html      | splitpart $data/asahicom.politics
+$fetcher http://www.asahi.com/flash/fbusiness.html      | splitpart $data/asahicom.business
+$fetcher http://www.asahi.com/flash/finternational.html | splitpart $data/asahicom.international
+$fetcher http://www.asahi.com/flash/fsports.html        | splitpart $data/asahicom.sports
+$fetcher http://www.asahi.com/flash/fpersonnel.html     | splitpart $data/asahicom.personnel
