@@ -1,0 +1,70 @@
+!
+! resources for XMclink
+!
+	XMclink*fontList:\
+		-adobe-helvetica-medium-r-normal--14-*-*-*-*-*-iso8859-1;\
+		-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0208.1983-0;\
+		-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0212.1990-0;\
+		-misc-fixed-medium-r-normal--14-*-*-*-*-*-jisx0201.1976-0:
+	XMclink*XmTextField.translations: #override\n\
+		Ctrl <Key>b:		backward-character()\n\
+		Ctrl <Key>f:		forward-character()\n\
+		Meta <Key>b:		backward-word()\n\
+		Meta <Key>f:		forward-word()\n\
+		Ctrl <Key>a:		beginning-of-line()\n\
+		Ctrl <Key>e:		end-of-line()\n\
+		Ctrl <Key>d:		delete-next-character()\n\
+		Meta <Key>d:		delete-next-word()\n\
+		Ctrl <Key>h:		delete-previous-character()\n\
+		Ctrl <Key>k:		delete-to-end-of-line()\n
+
+	XMclink*XmText.translations: #override\n\
+		Ctrl <Key>b:		backward-character()\n\
+		Alt <Key>b:		backward-word()\n\
+		Meta <Key>b:		backward-word()\n\
+		Shift Alt <Key>b:	backward-word(extend)\n\
+		Shift Meta <Key>b:	backward-word(extend)\n\
+		Alt <Key>[:		backward-paragraph()\n\
+		Meta <Key>[:		backward-paragraph()\n\
+		Shift Alt <Key>[:	backward-paragraph(extend)\n\
+		Shift Meta <Key>[:	backward-paragraph(extend)\n\
+		Alt <Key><:		beginning-of-file()\n\
+		Meta <Key><:		beginning-of-file()\n\
+		Ctrl <Key>a:		beginning-of-line()\n\
+		Shift Ctrl <Key>a:	beginning-of-line(extend)\n\
+		Ctrl <Key>osfInsert:	copy-clipboard()\n\
+		Shift <Key>osfDelete:	cut-clipboard()\n\
+		Shift <Key>osfInsert:	paste-clipboard()\n\
+		Alt <Key>>:		end-of-file()\n\
+		Meta <Key>>:		end-of-file()\n\
+		Ctrl <Key>e:		end-of-line()\n\
+		Shift Ctrl <Key>e:	end-of-line(extend)\n\
+		Ctrl <Key>f:		forward-character()\n\
+		Alt <Key>]:		forward-paragraph()\n\
+		Meta <Key>]:		forward-paragraph()\n\
+		Shift Alt <Key>]:	forward-paragraph(extend)\n\
+		Shift Meta <Key>]:	forward-paragraph(extend)\n\
+		Ctrl Alt <Key>f:	forward-word()\n\
+		Ctrl Meta <Key>f:	forward-word()\n\
+		Ctrl <Key>d:		kill-next-character()\n\
+		Ctrl <Key>h:		kill-previous-character()\n\
+		Alt <Key>BackSpace:	kill-previous-word()\n\
+		Meta <Key>BackSpace:	kill-previous-word()\n\
+		Ctrl <Key>w:		key-select() kill-selection()\n\
+		Ctrl <Key>y:		unkill()\n\
+		Ctrl <Key>k:		kill-to-end-of-line()\n\
+		Alt <Key>Delete:	kill-to-start-of-line()\n\
+		Meta <Key>Delete:	kill-to-start-of-line()\n\
+		Ctrl <Key>o:		newline-and-backup()\n\
+		Ctrl <Key>j:		newline-and-indent()\n\
+		Ctrl <Key>n:		next-line()\n\
+		Ctrl <Key>osfLeft:	page-left()\n\
+		Ctrl <Key>osfRight:	page-right()\n\
+		Ctrl <Key>p:		previous-line()\n\
+		Ctrl <Key>g:		process-cancel()\n\
+		Ctrl <Key>l:		redraw-display()\n\
+		Ctrl <Key>v:		next-page()\n\
+		Meta <Key>v:		previous-page()\n\
+		Ctrl <Key>osfDown:	next-page()\n\
+		Ctrl <Key>osfUp:	previous-page()\n\
+		Ctrl <Key>space:	set-anchor()\n
