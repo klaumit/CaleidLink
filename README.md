@@ -1,2 +1,2 @@
 # CaleidLink
-A tool for synchronizing your Casio PDA
+A tool for synchronizing your Casio PDA.
