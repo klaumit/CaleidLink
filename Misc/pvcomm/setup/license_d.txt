@@ -1,0 +1,14 @@
+Durch die Benutzung eines Programmes von AUDACIA Software, für das nicht eine ausdrücklich genannte andere Lizenz gilt, stimmen Sie den folgenden Nutzungsbedingungen zu:
+
+Sämtliche enthaltenen Dateien, seien es Quelltext-, Header-, Dokumentations- oder binäre Dateien, sind, soweit nicht anders gekennzeichnet, geistiges Eigentum von AUDACIA Software und dem jeweiligen Autor.
+
+Die Software wird ohne jegliche Garantie angeboten. Weder AUDACIA Software noch der Autor tragen irgendeine Art der Verantwortung für durch die Anwendung dieser Software entstandenen Schäden, Verluste oder andere Probleme.
+
+Die Software darf für jeden Zweck verwendet werden, auch für kommerzielle Projekte, solange die folgenden Bedingungen erfüllt sind:
+ - Die Software ist nicht als Produkt eines anderen auszugeben.
+ - Modifizierte Versionen der Software müssen deutlich als solche gekennzeichnet sein. Ferner muß ein Verweis auf die Originalversion gemacht werden.
+
+Wird die Software in einem anderen Projekt verwendet, so ist eine Referenz auf AUDACIA Software nicht zwingend erforderlich, aber wünschenswert.
+
+
+(c) 2007 by Moritz Beutel, AUDACIA Software

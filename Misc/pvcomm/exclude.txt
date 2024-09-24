@@ -1,0 +1,10 @@
+.obj
+.tds
+.csm
+.#
+.~
+\Debug_Build\
+\old\
+\pvcommc\
+\rs232\
+\__history\

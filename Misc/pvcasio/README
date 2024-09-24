@@ -1,0 +1,24 @@
+This is a library which helps to communicate with a Casio PV.
+
+This is a developer release!!
+
+Use at your own risk.
+
+If you compile it, there will be a binary called pvcasio. This is a little program to demonstrate what could be done with this library.
+At the moment this program can only download data from the PV. The code for uploading is already here. But not useable with the pvcasio
+executable.
+I will try to make a better demo app which can also upload data, but at the moment it is only known how to add entries. It can not manipulate
+nor delete entries.
+If you want to see how this works take a look in the main.c
+This Project is developed with KDeveloper. So if you have this IDE you can use it to take a deeper look.
+
+If you haven't synced your PV with any other Applikation, the demo program might fail. The reason for this is unknown. Go sync your PV with
+PCSync or AcroSync and it should work.
+
+So to compile:
+./configure
+make
+
+do not use make install at the moment, it doesn't make sense.
+
+So have fun...

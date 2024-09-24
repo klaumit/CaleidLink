@@ -1,0 +1,12 @@
+
+
+- Make WaitForLink usable with PV-PIN
+- Make secret area accessible
+- Add API for Bootstrap
+- Add ADT and ADD-IN upload
+- better Example Applikation
+- Timeout for ReadByte and WriteByte so that they never wait for ever
+- Write Docu
+- more...
+
+- Make a Webpage ;-)

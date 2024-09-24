@@ -1,0 +1,14 @@
+By using software by AUDACIA that does not use another license you agree to the following conditions:
+
+All supplied source, header, documentation and binary files are the intellectual property of AUDACIA Software and their authors, as long as not marked otherwise.
+
+This software is provided "as-is" without any warranty. Neither AUDACIA Software nor the author bear any kind of responsibility for damages, losses or other problems caused by this software.
+
+This software may be used for any purpose, including commercial applications, as long as the following conditions are fulfilled:
+ - You must not claim that you are the author of this software.
+ - Modified versions of this library must be clearly marked as such. You must not claim that you have written the original version. Furthermore, you must give a reference to the original version.
+
+If you use this software in your project, a reference to AUDACIA Software is not required but appreciated.
+
+ 
+(c) 2007 by Moritz Beutel, AUDACIA Software

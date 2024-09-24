@@ -1,0 +1,33 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-04 19:40+0100\n"
+"PO-Revision-Date: 2008-02-04 19:41+0100\n"
+"Last-Translator: Moritz Beutel <mb@audacia-software.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: E:\Programs\BDS40\Projects\pvsdk\PVComm\plugin\apvfile.cpp:92
+msgid "APVFile: Wrong file format"
+msgstr "APVFile: Falsches Dateiformat"
+
+#: E:\Programs\BDS40\Projects\pvsdk\PVComm\plugin\apvfile.cpp:94
+msgid "APVFile: Wrong file format version"
+msgstr "APVFile: Falsche Dateiformatversion"
+
+#: E:\Programs\BDS40\Projects\pvsdk\PVComm\plugin\apvfile.cpp:114
+msgid "APVFile: Wrong header size"
+msgstr "APVFile: Falsche Headergröße"
+
+#: E:\Programs\BDS40\Projects\pvsdk\PVComm\plugin\apvfile.cpp:208
+msgid "APVFile: File type description too long"
+msgstr "APVFile: Dateitypbeschreibung zu lang"
+

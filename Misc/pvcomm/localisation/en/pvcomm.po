@@ -1,0 +1,334 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: PVComm Terminal v1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-04 19:40+0100\n"
+"PO-Revision-Date: 2008-02-04 19:45+0100\n"
+"Last-Translator: Moritz Beutel <mb@audacia-software.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: English\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. FrmMain..Caption
+#: main_unit.dfm:4
+msgid "PVComm Terminal"
+msgstr "PVComm Terminal"
+
+#. FrmMain..Font.Name
+#. FrmSettings..Font.Name
+#: main_unit.dfm:13
+msgid "Tahoma"
+msgstr ""
+
+#. FrmMain..LblFileName..Caption
+#: main_unit.dfm:30
+msgid "File name:"
+msgstr "File name:"
+
+#. FrmMain..LblFiles..Caption
+#: main_unit.dfm:38
+msgid "Files:"
+msgstr "Files:"
+
+#. FrmMain..LblMode..Caption
+#: main_unit.dfm:45
+msgid "Mode:"
+msgstr "Mode:"
+
+#. FrmMain..LblSubmode..Caption
+#: main_unit.dfm:53
+msgid "Submode:"
+msgstr "Submode:"
+
+#. FrmMain..TbrButtons..TbnAddFiles..Hint
+#. FrmMain..TbrButtons..TbnAddFiles..Caption
+#: main_unit.dfm:99
+msgid "Add files..."
+msgstr "Add files..."
+
+#. FrmMain..TbrButtons..TbnRemoveFiles..Hint
+#. FrmMain..TbrButtons..TbnRemoveFiles..Caption
+#: main_unit.dfm:109
+msgid "Remove files"
+msgstr "Remove files"
+
+#. FrmMain..TbrButtons..TbnExportFiles..Hint
+#. FrmMain..TbrButtons..TbnExportFiles..Caption
+#: main_unit.dfm:119
+msgid "Export files..."
+msgstr "Export files..."
+
+#. FrmMain..TbrButtons..TbnSettings..Hint
+#. FrmMain..TbrButtons..TbnSettings..Caption
+#: main_unit.dfm:136
+msgid "Settings..."
+msgstr "Settings..."
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:351
+#. FrmMain..TbrButtons..TbnConnect..Hint
+#. FrmMain..TbrButtons..TbnConnect..Caption
+#: main_unit.dfm:145
+msgid "Connect"
+msgstr "Connect"
+
+#. FrmMain..TbrButtons..TbnAbout..Hint
+#. FrmMain..TbrButtons..TbnAbout..Caption
+#: main_unit.dfm:161
+msgid "About..."
+msgstr "About..."
+
+#. FrmMain..BtnFileName..Caption
+#. FrmSettings..BtnOK..Caption
+#: main_unit.dfm:173
+msgid "OK"
+msgstr "OK"
+
+#. FrmMain..EdtFileName..Text
+#: main_unit.dfm:194
+msgid "SHARED"
+msgstr "SHARED"
+
+#. FrmMain..ChkModeSecret..Caption
+#: main_unit.dfm:217
+msgid "Secret mode"
+msgstr "Secret mode"
+
+#. FrmMain..MainMenu..MniFile..Caption
+#: main_unit.dfm:397
+msgid "&File"
+msgstr "&File"
+
+#. FrmMain..MainMenu..MniFile..MniAddFiles..Caption
+#: main_unit.dfm:399
+msgid "&Add Files..."
+msgstr "&Add Files..."
+
+#. FrmMain..MainMenu..MniFile..MniExportFiles..Caption
+#: main_unit.dfm:403
+msgid "&Export files..."
+msgstr "&Export files..."
+
+#. FrmMain..MainMenu..MniFile..MniRemoveFiles..Caption
+#. FrmMain..PpmFiles..PmiRemoveFiles..Caption
+#: main_unit.dfm:407
+msgid "&Remove files"
+msgstr "&Remove files"
+
+#. FrmMain..MainMenu..MniFile..N1..Caption
+#. FrmMain..MainMenu..MniConnection..N2..Caption
+#: main_unit.dfm:411
+msgid "-"
+msgstr ""
+
+#. FrmMain..MainMenu..MniFile..MniExit..Caption
+#: main_unit.dfm:414
+msgid "E&xit"
+msgstr "E&xit"
+
+#. FrmMain..MainMenu..MniConnection..Caption
+#: main_unit.dfm:419
+msgid "&Connection"
+msgstr "&Connection"
+
+#. FrmMain..MainMenu..MniConnection..MniConnectionSettings..Caption
+#: main_unit.dfm:421
+msgid "&Settings..."
+msgstr "&Settings..."
+
+#. FrmMain..MainMenu..MniConnection..MniConnectionActive..Caption
+#: main_unit.dfm:429
+msgid "&Connected"
+msgstr "&Connected"
+
+#. FrmMain..MainMenu..MniHelp..Caption
+#: main_unit.dfm:434
+msgid "&Help"
+msgstr "&Help"
+
+#. FrmMain..MainMenu..MniHelp..MniAbout..Caption
+#: main_unit.dfm:436
+msgid "&About..."
+msgstr "&About..."
+
+#. FrmMain..PpmFiles..PmiExportFiles..Caption
+#: main_unit.dfm:1375
+msgid "E&xport files"
+msgstr "E&xport files"
+
+#. FrmSettings..Caption
+#: settings_unit.dfm:6
+msgid "Settings"
+msgstr "Settings"
+
+#. FrmSettings..BtnClose..Caption
+#: settings_unit.dfm:30
+msgid "Close"
+msgstr "Close"
+
+#. FrmSettings..GpbConnection..Caption
+#: settings_unit.dfm:51
+msgid "Connection"
+msgstr "Connection"
+
+#. FrmSettings..GpbConnection..LblDevice..Caption
+#: settings_unit.dfm:61
+msgid "Device:"
+msgstr "Device:"
+
+#. FrmSettings..GpbConnection..LblSpeed..Caption
+#: settings_unit.dfm:68
+msgid "Speed:"
+msgstr "Speed:"
+
+#. FrmSettings..GpbConnection..CbxSpeed..Text
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:90
+msgid "38400 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:92
+msgid "9600 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:93
+msgid "19200 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:95
+msgid "57600 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:96
+msgid "115200 bps"
+msgstr ""
+
+#. FrmSettings..GpbUI..Caption
+#: settings_unit.dfm:105
+msgid "User Interface"
+msgstr "User Interface"
+
+#. FrmSettings..GpbUI..LblLanguage..Caption
+#: settings_unit.dfm:115
+msgid "Language:"
+msgstr "Language:"
+
+#. FrmSettings..GpbUI..ChkShowBtnText..Caption
+#: settings_unit.dfm:123
+msgid "Show button descriptions"
+msgstr "Show button descriptions"
+
+#. FrmSettings..GpbUI..ChkConfirmDelete..Caption
+#: settings_unit.dfm:134
+msgid "Ask before deleting files"
+msgstr "Ask before deleting files"
+
+#. FrmSettings..GpbUI..BtnResetScreenPosition..Caption
+#: settings_unit.dfm:145
+msgid "Reset screen position"
+msgstr "Reset screen position"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:39
+#, c-format
+msgid "Known APV file types (%s)|%s|All files (*.*)|*.*"
+msgstr "Known APV file types (%s)|%s|All files (*.*)|*.*"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:85
+msgid "Unknown"
+msgstr "Unknown"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:90
+msgid "Incompatible Application Binary Interface"
+msgstr "Incompatible Application Binary Interface"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:94
+msgid "Incompatible application signature"
+msgstr "Incompatible application signature"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:98
+msgid "Incompatible application interface version"
+msgstr "Incompatible application interface version"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:103
+#, c-format
+msgid ""
+"ucl::oo::PlugInManager: Error while loading Plug-in\n"
+"Plug-in DLL: %s\n"
+"Error: %s\n"
+"    Application: \"%s\"\n"
+"    DLL: \"%s\""
+msgstr ""
+"ucl::oo::PlugInManager: Error while loading Plug-in\n"
+"Plug-in DLL: %s\n"
+"Error: %s\n"
+"    Application: \"%s\"\n"
+"    DLL: \"%s\""
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:108
+msgid "Plug-in error"
+msgstr "Plug-in error"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:306
+msgid "Connection type not implemented!"
+msgstr "Connection type not implemented!"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:352
+msgid "Cancel"
+msgstr "Cancel"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:353
+msgid "Disconnect"
+msgstr "Disconnect"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:356
+msgid "Not connected"
+msgstr "Not connected"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:357
+msgid "Connecting..."
+msgstr "Connecting..."
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:358
+msgid "Connected"
+msgstr "Connected"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:361
+msgid "Busy..."
+msgstr "Busy..."
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:483
+#, c-format
+msgid "Wrong file mode (current: %d, required: %d)"
+msgstr "Wrong file mode (current: %d, required: %d)"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:525
+msgid "Confirm File Delete"
+msgstr "Confirm File Delete"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:526
+msgid "Really delete the selected files?"
+msgstr "Really delete the selected files?"
+
+# F:\Moritz\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:593
+msgid "Please select output directory:"
+msgstr "Please select output directory:"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\pvext_bas.cpp:62
+msgid "PVWriteBAS: Too many files"
+msgstr "PVWriteBAS: Too many files"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\pvext_bas.cpp:77
+msgid "PVReadBAS: File too large"
+msgstr "PVReadBAS: File too large"
+

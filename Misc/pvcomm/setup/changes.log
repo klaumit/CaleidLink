@@ -1,0 +1,29 @@
+PVComm Terminal - Changes
+=========================
+
+Version 1.50:
+
+[+] The PV-S1600 is now supported. 
+[*] General redesign of code base (Plug-in manager, Factories and Helper Interfaces). An object-oriented plug-in system is used. 
+
+
+Version 1.40:
+
+[+] Drag&Drop is supported now. 
+[*] The provisional GUI has been replaced by a fully functional and well-equipped interface. 
+
+
+Version 1.21:
+
+[-] Multipart text files are saved correctly. 
+
+
+Version 1.20:
+
+[+] Plug-In system provided for the support of custom file types. 
+
+
+Version 1.01:
+
+[i] First release. PV-S1600 and other transfer speeds than 38400 bps not supported yet. 
+

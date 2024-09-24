@@ -1,0 +1,318 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: PVComm Terminal v1.50\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2008-02-04 19:40+0100\n"
+"PO-Revision-Date: 2008-02-04 19:44+0100\n"
+"Last-Translator: Moritz Beutel <mb@audacia-software.de>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: German\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+#. FrmMain..Caption
+#: main_unit.dfm:4
+msgid "PVComm Terminal"
+msgstr "PVComm Terminal"
+
+#. FrmMain..Font.Name
+#. FrmSettings..Font.Name
+#: main_unit.dfm:13
+msgid "Tahoma"
+msgstr "Tahoma"
+
+#. FrmMain..LblFileName..Caption
+#: main_unit.dfm:30
+msgid "File name:"
+msgstr "Dateiname:"
+
+#. FrmMain..LblFiles..Caption
+#: main_unit.dfm:38
+msgid "Files:"
+msgstr "Dateien:"
+
+#. FrmMain..LblMode..Caption
+#: main_unit.dfm:45
+msgid "Mode:"
+msgstr "Modus:"
+
+#. FrmMain..LblSubmode..Caption
+#: main_unit.dfm:53
+msgid "Submode:"
+msgstr "Submodus:"
+
+#. FrmMain..TbrButtons..TbnAddFiles..Hint
+#. FrmMain..TbrButtons..TbnAddFiles..Caption
+#: main_unit.dfm:99
+msgid "Add files..."
+msgstr "Hinzufügen..."
+
+#. FrmMain..TbrButtons..TbnRemoveFiles..Hint
+#. FrmMain..TbrButtons..TbnRemoveFiles..Caption
+#: main_unit.dfm:109
+msgid "Remove files"
+msgstr "Entfernen"
+
+#. FrmMain..TbrButtons..TbnExportFiles..Hint
+#. FrmMain..TbrButtons..TbnExportFiles..Caption
+#: main_unit.dfm:119
+msgid "Export files..."
+msgstr "Exportieren..."
+
+#. FrmMain..TbrButtons..TbnSettings..Hint
+#. FrmMain..TbrButtons..TbnSettings..Caption
+#: main_unit.dfm:136
+msgid "Settings..."
+msgstr "Einstellungen..."
+
+#. FrmMain..TbrButtons..TbnConnect..Hint
+#. FrmMain..TbrButtons..TbnConnect..Caption
+#: main_unit.dfm:145
+msgid "Connect"
+msgstr "Verbinden"
+
+#. FrmMain..TbrButtons..TbnAbout..Hint
+#. FrmMain..TbrButtons..TbnAbout..Caption
+#: main_unit.dfm:161
+msgid "About..."
+msgstr "Info..."
+
+#. FrmMain..BtnFileName..Caption
+#. FrmSettings..BtnOK..Caption
+#: main_unit.dfm:173
+msgid "OK"
+msgstr "OK"
+
+#. FrmMain..EdtFileName..Text
+#: main_unit.dfm:194
+msgid "SHARED"
+msgstr "SHARED"
+
+#. FrmMain..ChkModeSecret..Caption
+#: main_unit.dfm:217
+msgid "Secret mode"
+msgstr "Geheimer Modus"
+
+#. FrmMain..MainMenu..MniFile..Caption
+#: main_unit.dfm:397
+msgid "&File"
+msgstr "&Datei"
+
+#. FrmMain..MainMenu..MniFile..MniAddFiles..Caption
+#: main_unit.dfm:399
+msgid "&Add Files..."
+msgstr "Dateien &hinzufügen..."
+
+#. FrmMain..MainMenu..MniFile..MniExportFiles..Caption
+#: main_unit.dfm:403
+msgid "&Export files..."
+msgstr "Dateien& exportieren..."
+
+#. FrmMain..MainMenu..MniFile..MniRemoveFiles..Caption
+#. FrmMain..PpmFiles..PmiRemoveFiles..Caption
+#: main_unit.dfm:407
+msgid "&Remove files"
+msgstr "Dateien &entfernen"
+
+#. FrmMain..MainMenu..MniFile..N1..Caption
+#. FrmMain..MainMenu..MniConnection..N2..Caption
+#: main_unit.dfm:411
+msgid "-"
+msgstr "-"
+
+#. FrmMain..MainMenu..MniFile..MniExit..Caption
+#: main_unit.dfm:414
+msgid "E&xit"
+msgstr "&Schließen"
+
+#. FrmMain..MainMenu..MniConnection..Caption
+#: main_unit.dfm:419
+msgid "&Connection"
+msgstr "&Verbindung"
+
+#. FrmMain..MainMenu..MniConnection..MniConnectionSettings..Caption
+#: main_unit.dfm:421
+msgid "&Settings..."
+msgstr "&Einstellungen..."
+
+#. FrmMain..MainMenu..MniConnection..MniConnectionActive..Caption
+#: main_unit.dfm:429
+msgid "&Connected"
+msgstr "&Verbindung aktiv"
+
+#. FrmMain..MainMenu..MniHelp..Caption
+#: main_unit.dfm:434
+msgid "&Help"
+msgstr "&Hilfe"
+
+#. FrmMain..MainMenu..MniHelp..MniAbout..Caption
+#: main_unit.dfm:436
+msgid "&About..."
+msgstr "&Info..."
+
+#. FrmMain..PpmFiles..PmiExportFiles..Caption
+#: main_unit.dfm:1375
+msgid "E&xport files"
+msgstr "Dateien &exportieren..."
+
+#. FrmSettings..Caption
+#: settings_unit.dfm:6
+msgid "Settings"
+msgstr "Einstellungen"
+
+#. FrmSettings..BtnClose..Caption
+#: settings_unit.dfm:30
+msgid "Close"
+msgstr "Schließen"
+
+#. FrmSettings..GpbConnection..Caption
+#: settings_unit.dfm:51
+msgid "Connection"
+msgstr "Verbindung"
+
+#. FrmSettings..GpbConnection..LblDevice..Caption
+#: settings_unit.dfm:61
+msgid "Device:"
+msgstr "Port:"
+
+#. FrmSettings..GpbConnection..LblSpeed..Caption
+#: settings_unit.dfm:68
+msgid "Speed:"
+msgstr "Geschwindigkeit:"
+
+#. FrmSettings..GpbConnection..CbxSpeed..Text
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:90
+msgid "38400 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:92
+msgid "9600 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:93
+msgid "19200 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:95
+msgid "57600 bps"
+msgstr ""
+
+#. FrmSettings..GpbConnection..CbxSpeed....Items.Strings
+#: settings_unit.dfm:96
+msgid "115200 bps"
+msgstr ""
+
+#. FrmSettings..GpbUI..Caption
+#: settings_unit.dfm:105
+msgid "User Interface"
+msgstr "Benutzerinterface"
+
+#. FrmSettings..GpbUI..LblLanguage..Caption
+#: settings_unit.dfm:115
+msgid "Language:"
+msgstr "Sprache:"
+
+#. FrmSettings..GpbUI..ChkShowBtnText..Caption
+#: settings_unit.dfm:123
+msgid "Show button descriptions"
+msgstr "Schaltflächenbeschriftungen anzeigen"
+
+#. FrmSettings..GpbUI..ChkConfirmDelete..Caption
+#: settings_unit.dfm:134
+msgid "Ask before deleting files"
+msgstr "Sicherheitsabfrage vor dem Löschen"
+
+#. FrmSettings..GpbUI..BtnResetScreenPosition..Caption
+#: settings_unit.dfm:145
+msgid "Reset screen position"
+msgstr "Bildschirmposition zurücksetzen"
+
+#, c-format
+msgid "Known APV file types (%s)|%s|All files (*.*)|*.*"
+msgstr "Bekannte Dateitypen (%s)|%s|Alle Dateien (*.*)|*.*"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:85
+msgid "Unknown"
+msgstr "Unbekannt"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:90
+msgid "Incompatible Application Binary Interface"
+msgstr "Inkompatibles Binärinterface"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:94
+msgid "Incompatible application signature"
+msgstr "Inkompatible Anwendungssignatur"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:98
+msgid "Incompatible application interface version"
+msgstr "Inkompatible Interfaceversion"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:103
+#, c-format
+msgid ""
+"ucl::oo::PlugInManager: Error while loading Plug-in\n"
+"Plug-in DLL: %s\n"
+"Error: %s\n"
+"    Application: \"%s\"\n"
+"    DLL: \"%s\""
+msgstr ""
+"ucl::oo::PlugInManager: Fehler beim Laden eines Plug-ins\n"
+"Plug-in-DLL: %s\n"
+"Fehler: %s\n"
+"    Anwendung: \"%s\"\n"
+"    DLL: \"%s\""
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:108
+msgid "Plug-in error"
+msgstr "Plug-in-Fehler"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:306
+msgid "Connection type not implemented!"
+msgstr "Verbindungstyp nicht implementiert!"
+
+msgid "Cancel"
+msgstr "Abbrechen"
+
+msgid "Disconnect"
+msgstr "Trennen"
+
+msgid "Not connected"
+msgstr "Nicht verbunden"
+
+msgid "Connecting..."
+msgstr "Verbindung wird hergestellt..."
+
+msgid "Connected"
+msgstr "Verbunden"
+
+msgid "Busy..."
+msgstr "Daten werden übertragen..."
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\main_unit.cpp:483
+#, c-format
+msgid "Wrong file mode (current: %d, required: %d)"
+msgstr "Falscher Dateimodus (gegeben: %d, benötigt: %d)"
+
+msgid "Confirm File Delete"
+msgstr "Löschen von Dateien bestätigen"
+
+msgid "Really delete the selected files?"
+msgstr "Sollen die ausgewählten Dateien wirklich gelöscht werden?"
+
+msgid "Please select output directory:"
+msgstr "Ausgabeverzeichnis:"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\pvext_bas.cpp:62
+msgid "PVWriteBAS: Too many files"
+msgstr "PVWriteBAS: Zu viele Datensätze"
+
+# E:\Programs\BDS40\Projects\pvsdk\PVComm\pvext_bas.cpp:77
+msgid "PVReadBAS: File too large"
+msgstr "PVReadBAS: Datei zu groß"
+

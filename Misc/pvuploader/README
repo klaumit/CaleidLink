@@ -1,0 +1,36 @@
+README for pvuploader
+
+This is alpha software, it just works for me...
+
+To build the executable just run "make".
+
+Create your LZH archives with "lha ao50" to make them compatible with
+TextViewer or PVAddInManager.
+To preserve the directory structure use "lha ao51".
+
+You can then upload the archive to your PV with
+(example for first serial port using 57600 baud)
+
+  pvuploader --port=/dev/ttyS0 --baud=57600 --wakeup test.lzh
+
+You can use the parameter "--append" to append archive contents to an
+existing archive with the same name already installed on your
+PV.
+
+If you don't use "--wakeup" press the start button on your cradle (or
+run the data-synchronisation addin on PV-S460/S660) after starting
+pvuploader.
+
+Note: you need the BootStrap patch (download from http://MCPVC.gmxhome.de)
+installed on your PV to make this work!
+
+Note: if you do not use "--append" an existing archive of the same
+name will be overwritten!
+
+Note: PVOS *is* case sensitive for filenames.
+
+If you have any questions or comments, feel free to contact me.
+
+Have fun!
+
+     Johannes (Jo_Stein@web.de)
